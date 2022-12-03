@@ -1,0 +1,59 @@
+/* right answer color : #3B6561 */
+/* wrong answer color : #6C505F */
+/* common answer color : #4F5684 */
+
+/* Quiz box  */
+.q-box {
+    height: 350px;
+    width: auto;
+    max-width: 300px;
+    border-radius: 8px;
+    background-color: #414e619c;
+}
+
+
+/* quiz box head  */
+.q-box_timer {
+    display: inline-block;
+    background-color: #212832;
+    color: yellow;
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 50px 50px 0px 0px;
+    position: relative;
+    top: 11px;
+}
+
+.q-question {
+    background-color: #212832;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 11px;
+}
+
+/* quiz box body  */
+.q-box_body {
+    margin: 15px 0px;
+}
+
+.q-box_options {
+    background-color: #4f5684b5;
+    margin: 9px 0px;
+    padding: 5px 0px;
+    border-radius: 30px;
+    text-align: start;
+    display: flex;
+    align-items: center;
+}
+
+.option-icon {
+    background-color: #7A70ED;
+    margin: 0px 6px;
+    padding: 6px 11px;
+    font-size: 12px;
+    border-radius: 50px;
+}
+
+/* quiz box options  */

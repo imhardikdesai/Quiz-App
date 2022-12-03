@@ -1,10 +1,14 @@
 import './App.css';
+import NavBar from './components/NavBar/NavBar';
 import QuestionBox from './components/QuestionBox/QuestionBox';
 
 function App() {
   return (
     <>
-      <QuestionBox />
+      <div className="App">
+        <NavBar />
+        <QuestionBox />
+      </div>
     </>
   );
 }
