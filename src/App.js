@@ -1,14 +1,17 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import QuestionBox from './components/QuestionBox/QuestionBox';
+import QuizArea from './components/QuizArea/QuizArea';
+import QuizState from './context/QuizState';
 
 function App() {
   return (
     <>
+    <QuizState>
       <div className="App">
         <NavBar />
-        <QuestionBox />
+        <QuizArea />
       </div>
+    </QuizState>
     </>
   );
 }

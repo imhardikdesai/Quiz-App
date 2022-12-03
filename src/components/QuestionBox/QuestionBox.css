@@ -4,7 +4,6 @@
 
 /* Quiz box  */
 .q-box {
-    height: 350px;
     width: auto;
     max-width: 300px;
     border-radius: 8px;
@@ -40,12 +39,18 @@
 
 .q-box_options {
     background-color: #4f5684b5;
+    border: 1px solid #7A70ED;
     margin: 9px 0px;
     padding: 5px 0px;
     border-radius: 30px;
     text-align: start;
     display: flex;
     align-items: center;
+}
+
+.q-box_options:hover {
+    background-color: #3f4468b5;
+    cursor: pointer;
 }
 
 .option-icon {
