@@ -27,6 +27,10 @@ export default function Simple() {
             <Box bg={useColorModeValue('#171923a8')} px={4}>
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
                     <IconButton
+                        bg={useColorModeValue('#2c2c2da8')}
+                        _hover={{
+                            bg: useColorModeValue('#2c2c2d'),
+                        }}
                         size={'md'}
                         icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
                         aria-label={'Open Menu'}
@@ -37,6 +41,8 @@ export default function Simple() {
                         <Avatar
                             size={'sm'}
                             src={logo}
+                            w={10}
+                            h={10}
                         />
                         <HStack
                             as={'nav'}

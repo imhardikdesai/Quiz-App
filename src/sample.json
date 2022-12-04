@@ -1,6 +1,18 @@
 {
     "results": [
         {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which 80s band is fronted by singer/guitarist Robert Smith?",
+            "correct_answer": "The Cure",
+            "incorrect_answers": [
+                "The Smiths",
+                "Echo & the Funnymen",
+                "New Order"
+            ]
+        },
+        {
             "category": "Science: Mathematics",
             "type": "multiple",
             "difficulty": "easy",
@@ -23,18 +35,6 @@
                 "2008",
                 "2013"
             ]
-        },
-        {
-            "category": "Entertainment: Music",
-            "type": "multiple",
-            "difficulty": "easy",
-            "question": "Which 80s band is fronted by singer/guitarist Robert Smith?",
-            "correct_answer": "The Cure",
-            "incorrect_answers": [
-                "The Smiths",
-                "Echo & the Bunnymen",
-                "New Order"
-            ]
-        }
+        }  
     ]
 }
