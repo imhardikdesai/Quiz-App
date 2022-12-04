@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import Form from '../../components/Form/Form'
-import QuizArea from '../../components/QuizArea/QuizArea'
+import QuizArea from '../QuizArea/QuizArea'
 import quizContext from '../../context/quizContext'
 import { HashLoader } from 'react-spinners';
 

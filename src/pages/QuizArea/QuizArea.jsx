@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import QuestionBox from './../QuestionBox/QuestionBox'
+import QuestionBox from '../../components/QuestionBox/QuestionBox'
 import quizContext from '../../context/quizContext';
 
 const QuizArea = () => {

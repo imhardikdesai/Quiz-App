@@ -11,7 +11,7 @@ const QuizState = (props) => {
         const response = await fetch(api);
         const data = await response.json();
         let results = data.results;
-        setQuestions(results, console.log(results));
+        setQuestions(results);
         setLoading(false);
     };
 
