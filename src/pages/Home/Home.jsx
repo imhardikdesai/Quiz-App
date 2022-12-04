@@ -1,56 +1,41 @@
-import React from 'react'
-import quizData from '../../components/TriviaQuizData'
+import React, { useContext, useState } from 'react'
+import Form from '../../components/Form/Form'
+import QuizArea from '../../components/QuizArea/QuizArea'
+import quizContext from '../../context/quizContext'
+import { HashLoader } from 'react-spinners';
+
 
 const Home = () => {
+    const context = useContext(quizContext)
+    const { setUrl, url, fetchQuestions, setLoading, loading } = context
+    const [formData, setFormData] = useState({ number: '', category: '', difficulty: '', type: '' })
+
     const handleSubmit = (e) => {
+        setLoading(true)
         e.preventDefault();
+        const { number, category, difficulty, type } = formData
+        setUrl(`https://opentdb.com/api.php?amount=${number}&category=${category}&difficulty=${difficulty}&type=${type}`, fetchQuestions(url))
     }
 
+    const onChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+    }
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <div className="d-flex justify-content-center align-items-center mt-5">
+                <HashLoader
+                    color={'#3585c1'}
+                    loading={loading}
+                    size={100}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                />
+            </div>
 
-                <div className="mb-3">
-                    <label htmlFor="exampleInputEmail1" className="form-label">Number of Questions:</label>
-                    <input placeholder='Enter Number of Questions' type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                </div>
-
-                <div className="mb-3">
-                    <label htmlFor="category" className="form-label">Select Category:</label>
-                    <select name='category' className="form-select" aria-label="Default select example">
-                        <option defaultValue>Any Category</option>
-                        {
-                            quizData.category.map((index) => {
-                                return <option key={index} value={index}>{index}</option>
-                            })
-                        }
-                    </select>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="difficulty" className="form-label">Select Difficulty:</label>
-                    <select name='difficulty' className="form-select" aria-label="Default select example">
-                        <option defaultValue>Any Difficulty</option>
-                        {
-                            quizData.difficulty.map((index) => {
-                                return <option key={index} value={index}>{index}</option>
-                            })
-                        }
-                    </select>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="type" className="form-label">Select Type:</label>
-                    <select name='type' className="form-select" aria-label="Default select example">
-                        <option defaultValue>Any Type</option>
-                        {
-                            quizData.type.map((index) => {
-                                return <option key={index} value={index}>{index}</option>
-                            })
-                        }
-                    </select>
-                </div>
-                <button type="submit" className="btn btn-primary">Start Quiz</button>
-            </form>
+            {
+                url === '' ? <Form handleSubmit={handleSubmit} onChange={onChange} /> : <QuizArea />
+            }
         </>
     )
 }
