@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 const QuizState = (props) => {
     const [questions, setQuestions] = useState([]);
     const [url, setUrl] = useState("https://opentdb.com/api.php?amount=10");
-
+setUrl("https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple");
     const fetchQuestions = async () => {
         const response = await fetch(url);
         const data = await response.json();
@@ -14,6 +14,7 @@ const QuizState = (props) => {
     };
     useEffect(() => {
         fetchQuestions();
+        // eslint-disable-next-line
     }, []);
 
     return (
