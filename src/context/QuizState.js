@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const QuizState = (props) => {
     const [questions, setQuestions] = useState([]);
-    
+
     const [url, setUrl] = useState('');
 
     const fetchQuestions = async (api) => {
@@ -21,8 +21,11 @@ const QuizState = (props) => {
         fetchQuestions(url);
     }, [url]);
 
+
+    const [score, setScore] = useState(0);
+
     return (
-        <QuizContext.Provider value={{ questions, setQuestions, url, setUrl, fetchQuestions, loading, setLoading }}>
+        <QuizContext.Provider value={{ questions, setQuestions, url, setUrl, fetchQuestions, loading, setLoading, score, setScore }}>
             {props.children}
         </QuizContext.Provider>
     )

@@ -14,9 +14,9 @@ const QuizArea = () => {
         let optionsArray = incorrectAns;
         if (!optionsArray.includes(correctAns)) {
             optionsArray.splice(randomNumber(), 0, correctAns);
-            return optionsArray;
+            return [optionsArray, correctAns];
         } else {
-            return optionsArray;
+            return [optionsArray, correctAns];
         }
 
     }
@@ -26,7 +26,8 @@ const QuizArea = () => {
             {/* <QuestionBox question="What is the First name of astronaut" /> */}
             {
                 questions.map((index) => {
-                    return <QuestionBox options={getOptions(index.incorrect_answers, index.correct_answer)} question={index.question} key={index.question} />
+                    const options = getOptions(index.incorrect_answers, index.correct_answer)
+                    return <QuestionBox category={index.category} options={options} question={index.question} key={index.question} />
                 })
             }
         </>

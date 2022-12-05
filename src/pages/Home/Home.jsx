@@ -4,7 +4,6 @@ import QuizArea from '../QuizArea/QuizArea'
 import quizContext from '../../context/quizContext'
 import { HashLoader } from 'react-spinners';
 
-
 const Home = () => {
     const context = useContext(quizContext)
     const { setUrl, url, fetchQuestions, setLoading, loading } = context
