@@ -3,6 +3,7 @@ import Form from '../../components/Form/Form'
 import QuizArea from '../QuizArea/QuizArea'
 import quizContext from '../../context/quizContext'
 import { HashLoader } from 'react-spinners';
+import { Text } from '@chakra-ui/react'
 
 const Home = () => {
     const context = useContext(quizContext)
@@ -36,6 +37,8 @@ const Home = () => {
                 (url === '' || questions.length === 0)
                     ?
                     <div className="container my-3">
+                        <Text mb={'4'} fontSize='5xl'>Start your Quiz Now</Text>
+                        <hr />
                         <Form handleSubmit={handleSubmit} onChange={onChange} />
                     </div>
                     :

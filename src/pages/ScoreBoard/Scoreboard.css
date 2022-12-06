@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     background-image: url('./../../Assets/scoreboard-bg.jpg');
+    /* background: linear-gradient(179deg, #58158c 0%, #e8c3ff 100%); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

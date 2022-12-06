@@ -7,7 +7,7 @@ const Form = (props) => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form className='mt-2' onSubmit={handleSubmit}>
 
                 <div className="mb-3">
                     <label htmlFor="number" className="form-label">Number of Questions:</label>
