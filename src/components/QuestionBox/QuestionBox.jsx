@@ -7,16 +7,18 @@ import quizContext from '../../context/quizContext'
 // #53a24db5 - border
 
 const QuestionBox = (props) => {
-    let selectedAns;
+    let selectedAns = ''
     const context = useContext(quizContext)
-    const { setScore, score, next, setNext } = context
+    const { setScore, score, next, setNext, len } = context
     const { question, options, category } = props
     //Here options[0] = options array and options[1] = correct answer
     let i = -1
     const alphabet = ['A', 'B', 'C', 'D']
 
     const checkAnswer = (selectedAns) => {
-        if (selectedAns === options[1]) {
+        if (selectedAns === '') {
+            return true;
+        } else if (selectedAns === options[1]) {
             setScore({ ...score, 'rightAnswers': score.rightAnswers + 1 })
         } else {
             setScore({ ...score, 'wrongAnswers': score.wrongAnswers + 1 })
@@ -29,8 +31,12 @@ const QuestionBox = (props) => {
     }
 
     const handleNextQuestion = () => {
-        setNext(next + 1)
-        checkAnswer(selectedAns)
+        if (next <= len - 1) {
+            checkAnswer(selectedAns)
+            setNext(next + 1)
+        } else {
+            console.log('Quiz Ended')
+        }
     }
 
     return (
@@ -52,7 +58,7 @@ const QuestionBox = (props) => {
                 </div>
                 <div className="d-flex justify-content-between align-items-center mx-3">
                     <Badge colorScheme='purple'>{category}</Badge>
-                    <button onClick={handleNextQuestion} className="btn btn-primary">Next</button>
+                    <button onClick={handleNextQuestion} className="btn btn-primary">{(next >= len - 1) ? 'Submit' : 'Next'}</button>
                 </div>
             </div>
         </>

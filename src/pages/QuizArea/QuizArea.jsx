@@ -1,10 +1,11 @@
 import { useContext } from 'react';
 import QuestionBox from '../../components/QuestionBox/QuestionBox'
 import quizContext from '../../context/quizContext';
+import Scoreboard from '../ScoreBoard/Scoreboard';
 
 const QuizArea = () => {
     const context = useContext(quizContext)
-    const { questions, next } = context
+    const { questions, next, len } = context
 
     const randomNumber = () => {
         return Math.floor(Math.random() * 4);
@@ -23,18 +24,21 @@ const QuizArea = () => {
 
     return (
         <>
-            <div className="container p-4">
-                {
-                    //For fetch All the Questions 🔴
+            {
+                //For fetch All the Questions 🔴
 
-                    // questions.map((index) => {
-                    //     const options = getOptions(index.incorrect_answers, index.correct_answer)
-                    //     return <QuestionBox category={index.category} options={options} question={index.question} key={index.question} />
-                    // })
-
-                    <QuestionBox category={questions[next].category} options={getOptions(questions[next].incorrect_answers, questions[next].correct_answer)} question={questions[next].question} key={questions[next].question} />
-                }
-            </div>
+                // questions.map((index) => {
+                //     const options = getOptions(index.incorrect_answers, index.correct_answer)
+                //     return <QuestionBox category={index.category} options={options} question={index.question} key={index.question} />
+                // })
+                (next <= len - 1)
+                    ?
+                    <div className="container p-4">
+                        < QuestionBox category={questions[next].category} options={getOptions(questions[next].incorrect_answers, questions[next].correct_answer)} question={questions[next].question} key={questions[next].question} />
+                    </div>
+                    :
+                    <Scoreboard />
+            }
         </>
     )
 }

@@ -1,7 +1,4 @@
 .main {
-    /* background-color: #A45EDA; */
-    /* min-height: 500px; */
-    /* border: 2px solid yellow; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -11,6 +8,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0px 0px 50px 50px;
+    min-height: 465px;
 }
 
 .score {
@@ -20,7 +18,7 @@
     background-color: white;
     border-radius: 50%;
     padding: 2rem 1.5rem;
-    margin: 2rem ;
+    margin: 2rem;
     font-weight: 600;
     text-align: center;
 }
@@ -40,14 +38,14 @@
     border-radius: 15px;
     max-width: 440px;
     position: relative;
-    top: 95px;
+    top: 116px;
 }
 
 .semi-table {
-    margin: 10px;
-    padding: 10px;
+    margin: 8px 6px;
+    padding: 6px 10px;
     display: flex;
-    justify-content: center;
+    width: 155px;
     align-items: baseline;
     /* border: 4px dotted aqua; */
 }
@@ -64,5 +62,7 @@
 }
 
 .point-info {
-    font-size: 1rem;
+    /* font-size: 1rem; */
+    font-size: 15px;
+    font-weight: 400;
 }
