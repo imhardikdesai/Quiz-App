@@ -5,7 +5,7 @@ import Scoreboard from '../ScoreBoard/Scoreboard';
 
 const QuizArea = () => {
     const context = useContext(quizContext)
-    const { questions, next, len } = context
+    const { questions, next, len, score } = context
 
     const randomNumber = () => {
         return Math.floor(Math.random() * 4);
@@ -19,7 +19,6 @@ const QuizArea = () => {
         } else {
             return [optionsArray, correctAns];
         }
-
     }
 
     return (
@@ -37,7 +36,7 @@ const QuizArea = () => {
                         < QuestionBox category={questions[next].category} options={getOptions(questions[next].incorrect_answers, questions[next].correct_answer)} question={questions[next].question} key={questions[next].question} />
                     </div>
                     :
-                    <Scoreboard />
+                    <Scoreboard total_que={len} wrong_que={score.wrongAnswers} correct_que={score.rightAnswers} />
             }
         </>
     )

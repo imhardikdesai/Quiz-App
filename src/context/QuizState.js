@@ -27,6 +27,7 @@ const QuizState = (props) => {
     const len = questions.length;
 
 
+
     return (
         <QuizContext.Provider value={{ len, questions, setQuestions, url, setUrl, fetchQuestions, loading, setLoading, score, setScore, next, setNext }}>
             {props.children}

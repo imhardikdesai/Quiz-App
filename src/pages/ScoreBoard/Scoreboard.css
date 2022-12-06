@@ -17,14 +17,14 @@
     color: #A45EDA;
     background-color: white;
     border-radius: 50%;
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.8rem;
     margin: 2rem;
     font-weight: 600;
     text-align: center;
 }
 
 .score span {
-    font-size: 3rem;
+    font-size: 2.3rem;
 }
 
 .point-table {
