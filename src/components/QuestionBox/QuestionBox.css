@@ -5,7 +5,8 @@
 /* Quiz box  */
 .q-box {
     width: auto;
-    max-width: 333px;
+    min-width: 333px;
+    max-width: 800px;
     border-radius: 8px;
     background-color: #414e619c;
 }

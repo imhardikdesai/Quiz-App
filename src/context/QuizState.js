@@ -22,10 +22,11 @@ const QuizState = (props) => {
     }, [url]);
 
 
-    const [score, setScore] = useState(0);
+    const [score, setScore] = useState({ 'rightAnswers': 0, 'wrongAnswers': 0 });
+    const [next, setNext] = useState(0)
 
     return (
-        <QuizContext.Provider value={{ questions, setQuestions, url, setUrl, fetchQuestions, loading, setLoading, score, setScore }}>
+        <QuizContext.Provider value={{ questions, setQuestions, url, setUrl, fetchQuestions, loading, setLoading, score, setScore, next, setNext }}>
             {props.children}
         </QuizContext.Provider>
     )

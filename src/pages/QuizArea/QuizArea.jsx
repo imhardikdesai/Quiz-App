@@ -4,7 +4,7 @@ import quizContext from '../../context/quizContext';
 
 const QuizArea = () => {
     const context = useContext(quizContext)
-    const { questions } = context
+    const { questions, next } = context
 
     const randomNumber = () => {
         return Math.floor(Math.random() * 4);
@@ -20,16 +20,19 @@ const QuizArea = () => {
         }
 
     }
-
+    
     return (
         <>
-            {/* <QuestionBox question="What is the First name of astronaut" /> */}
-            {
-                questions.map((index) => {
-                    const options = getOptions(index.incorrect_answers, index.correct_answer)
-                    return <QuestionBox category={index.category} options={options} question={index.question} key={index.question} />
-                })
-            }
+            <div className="container p-4">
+                {
+                    // questions.map((index) => {
+                    //     const options = getOptions(index.incorrect_answers, index.correct_answer)
+                    //     return <QuestionBox category={index.category} options={options} question={index.question} key={index.question} />
+                    // })
+
+                    <QuestionBox category={questions[next].category} options={getOptions(questions[next].incorrect_answers, questions[next].correct_answer)} question={questions[next].question} key={questions[next].question} />
+                }
+            </div>
         </>
     )
 }
