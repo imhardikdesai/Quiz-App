@@ -12,14 +12,14 @@ const Scoreboard = (props) => {
 
                 <div className="score">
                     Your Score <br />
-                    <span>{percentage} <small>%</small></span>
+                    <span>{percentage.toFixed(2)} <small>%</small></span>
                 </div>
                 <div className="point-table">
 
                     <div className="semi-table">
                         <div style={{ backgroundColor: '#A45EDA' }} className="circle"></div>
                         <div className='mx-2'>
-                            <div style={{ color: '#A45EDA' }} className="point">{Attempted}%</div>
+                            <div style={{ color: '#A45EDA' }} className="point">{Attempted.toFixed(2)}%</div>
                             <div className="point-info">
                                 Attempted
                             </div>

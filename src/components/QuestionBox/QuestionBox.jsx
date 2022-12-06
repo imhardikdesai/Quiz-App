@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import './QuestionBox.css'
 import { Badge } from '@chakra-ui/react'
 import quizContext from '../../context/quizContext'
@@ -10,7 +10,10 @@ import clickAudio from './../../Assets/select-sound.mp3'
 var audio = new Audio(clickAudio);
 
 const QuestionBox = (props) => {
+
+    const [timer, setTimer] = useState(30)
     let selectedAns = ''
+    const ref = useRef(null)
     const context = useContext(quizContext)
     const { setScore, score, next, setNext, len } = context
     const { question, options, category } = props
@@ -41,6 +44,20 @@ const QuestionBox = (props) => {
         }
     }
 
+    useEffect(() => {
+        let myInterval = setInterval(() => {
+            if (timer > 0) {
+                setTimer(timer - 1)
+            } else {
+                ref.current.click()
+            }
+        }, 1000)
+        return () => {
+            clearInterval(myInterval);
+        };
+    })
+
+
     return (
         <>
             {/* <ReactAudioPlayer
@@ -51,7 +68,7 @@ const QuestionBox = (props) => {
             /> */}
             <div className="q-box mx-auto my-5 p-4 text-center">
                 <div className="q-box_head">
-                    <div className="q-box_timer">30s</div>
+                    <div className="q-box_timer">{timer}s</div>
                     <div className="q-question" dangerouslySetInnerHTML={{ __html: question }}></div>
                 </div>
                 <div className="q-box_body">
@@ -66,7 +83,7 @@ const QuestionBox = (props) => {
                 </div>
                 <div className="d-flex flex-wrap justify-content-between align-items-center mx-3">
                     <Badge colorScheme='purple'>{category}</Badge>
-                    <button onClick={handleNextQuestion} className="btn btn-primary m-2">{(next >= len - 1) ? 'Submit' : 'Next'}</button>
+                    <button ref={ref} onClick={handleNextQuestion} className="btn btn-primary m-2">{(next >= len - 1) ? 'Submit' : 'Next'}</button>
                 </div>
             </div>
         </>
