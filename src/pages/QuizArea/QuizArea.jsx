@@ -20,11 +20,13 @@ const QuizArea = () => {
         }
 
     }
-    
+
     return (
         <>
             <div className="container p-4">
                 {
+                    //For fetch All the Questions 🔴
+
                     // questions.map((index) => {
                     //     const options = getOptions(index.incorrect_answers, index.correct_answer)
                     //     return <QuestionBox category={index.category} options={options} question={index.question} key={index.question} />

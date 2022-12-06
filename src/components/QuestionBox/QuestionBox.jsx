@@ -7,6 +7,7 @@ import quizContext from '../../context/quizContext'
 // #53a24db5 - border
 
 const QuestionBox = (props) => {
+    let selectedAns;
     const context = useContext(quizContext)
     const { setScore, score, next, setNext } = context
     const { question, options, category } = props
@@ -23,13 +24,13 @@ const QuestionBox = (props) => {
     }
 
     const handleOptionClick = (e) => {
-        const selectedAns = (e.target.innerText.slice(1)).trim()
+        selectedAns = (e.target.innerText.slice(1)).trim()
         console.log(selectedAns)
-        checkAnswer(selectedAns)
     }
 
     const handleNextQuestion = () => {
         setNext(next + 1)
+        checkAnswer(selectedAns)
     }
 
     return (

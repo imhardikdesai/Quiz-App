@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import QuizState from './context/QuizState';
 import Home from './pages/Home/Home';
+import Scoreboard from './pages/ScoreBoard/Scoreboard.jsx';
 
 function App() {
 
@@ -10,9 +11,8 @@ function App() {
       <QuizState>
         <div className="App">
           <NavBar />
-          <div className="container my-3">
-            <Home />
-          </div>
+          <Scoreboard />
+          {/* <Home /> */}
         </div>
       </QuizState>
     </>

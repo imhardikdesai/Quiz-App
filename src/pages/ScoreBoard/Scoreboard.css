@@ -1,0 +1,68 @@
+.main {
+    /* background-color: #A45EDA; */
+    /* min-height: 500px; */
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./../../Assets/scoreboard-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px 0px 50px 50px;
+}
+
+.score {
+    /* border: 6px solid rgba(128, 128, 128, 0.345); */
+    font-size: 1.2rem;
+    color: #A45EDA;
+    background-color: white;
+    border-radius: 50%;
+    padding: 2rem 1.5rem;
+    margin: 2rem ;
+    font-weight: 600;
+    text-align: center;
+}
+
+.score span {
+    font-size: 3rem;
+}
+
+.point-table {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 0px 20px;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+    background-color: aliceblue;
+    color: black;
+    border-radius: 15px;
+    max-width: 440px;
+    position: relative;
+    top: 95px;
+}
+
+.semi-table {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    /* border: 4px dotted aqua; */
+}
+
+.circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.point {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.point-info {
+    font-size: 1rem;
+}
