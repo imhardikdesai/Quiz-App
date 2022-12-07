@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useRef } from 'react'
+import React, { useContext } from 'react'
 import './QuestionBox.css'
 import { Badge } from '@chakra-ui/react'
 import quizContext from '../../context/quizContext'
@@ -7,13 +7,12 @@ import clickAudio from './../../Assets/select-sound.mp3'
 
 // #0b4b06 - bg
 // #53a24db5 - border
-var audio = new Audio(clickAudio);
+const audio = new Audio(clickAudio);
 
 const QuestionBox = (props) => {
 
-    const [timer, setTimer] = useState(30)
+    // const [timer, setTimer] = useState(30)
     let selectedAns = ''
-    const ref = useRef(null)
     const context = useContext(quizContext)
     const { setScore, score, next, setNext, len } = context
     const { question, options, category } = props
@@ -44,31 +43,29 @@ const QuestionBox = (props) => {
         }
     }
 
-    useEffect(() => {
-        let myInterval = setInterval(() => {
-            if (timer > 0) {
-                setTimer(timer - 1)
-            } else {
-                ref.current.click()
-            }
-        }, 1000)
-        return () => {
-            clearInterval(myInterval);
-        };
-    })
+
+    // for reverse timer
+
+    // useEffect(() => {
+    //     let myInterval = setInterval(() => {
+    //         if (timer > 0) {
+    //             setTimer(timer - 1)
+    //         } else {
+    //             setNext(next + 1)
+    //         }
+    //     }, 1000)
+    //     return () => {
+    //         clearInterval(myInterval);
+    //     };
+    // })
 
 
     return (
         <>
-            {/* <ReactAudioPlayer
-                style={{ display: 'none' }}
-                src={clickAudio}
-                autoPlay
-                controls
-            /> */}
             <div className="q-box mx-auto my-5 p-4 text-center">
                 <div className="q-box_head">
-                    <div className="q-box_timer">{timer}s</div>
+                    {/* <div className="q-box_timer">{timer}s</div> */}
+                    <div className="q-box_timer">{next+1}</div>
                     <div className="q-question" dangerouslySetInnerHTML={{ __html: question }}></div>
                 </div>
                 <div className="q-box_body">
@@ -83,7 +80,7 @@ const QuestionBox = (props) => {
                 </div>
                 <div className="d-flex flex-wrap justify-content-between align-items-center mx-3">
                     <Badge colorScheme='purple'>{category}</Badge>
-                    <button ref={ref} onClick={handleNextQuestion} className="btn btn-primary m-2">{(next >= len - 1) ? 'Submit' : 'Next'}</button>
+                    <button onClick={handleNextQuestion} className="btn btn-primary m-2">{(next >= len - 1) ? 'Submit' : 'Next'}</button>
                 </div>
             </div>
         </>
