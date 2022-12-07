@@ -5,6 +5,13 @@ const Form = (props) => {
 
     const { handleSubmit, onChange } = props
 
+    const getOptionsValue = (data) => {
+        return data.map((item) => {
+            let objectKeys = Object.keys(item)[0]
+            return <option key={objectKeys} value={item[objectKeys]}>{objectKeys}</option>
+        })
+    }
+
     return (
         <>
             <form className='mt-2' onSubmit={handleSubmit}>
@@ -19,10 +26,7 @@ const Form = (props) => {
                     <select name='category' className="form-select" aria-label="Default select example" onChange={onChange}>
                         <option value={'any'} defaultValue>Any Category</option>
                         {
-                            quizData.category.map((item) => {
-                                let objectKeys = Object.keys(item)[0]
-                                return <option key={objectKeys} value={item[objectKeys]}>{objectKeys}</option>
-                            })
+                            getOptionsValue(quizData.category)
                         }
                     </select>
                 </div>
@@ -31,10 +35,7 @@ const Form = (props) => {
                     <select name='difficulty' className="form-select" aria-label="Default select example" onChange={onChange}>
                         <option value={'any'} defaultValue>Any Difficulty</option>
                         {
-                            quizData.difficulty.map((item) => {
-                                let objectKeys = Object.keys(item)[0]
-                                return <option key={objectKeys} value={item[objectKeys]}>{objectKeys}</option>
-                            })
+                            getOptionsValue(quizData.difficulty)
                         }
                     </select>
                 </div>
@@ -43,10 +44,7 @@ const Form = (props) => {
                     <select name='type' className="form-select" aria-label="Default select example" onChange={onChange}>
                         <option value={'any'} defaultValue>Any Type</option>
                         {
-                            quizData.type.map((item) => {
-                                let objectKeys = Object.keys(item)[0]
-                                return <option key={objectKeys} value={item[objectKeys]}>{objectKeys}</option>
-                            })
+                            getOptionsValue(quizData.type)
                         }
                     </select>
                 </div>

@@ -42,7 +42,7 @@ const Home = () => {
                         <Form handleSubmit={handleSubmit} onChange={onChange} />
                     </div>
                     :
-                    <QuizArea />
+                <QuizArea />
             }
         </>
     )

@@ -30,6 +30,7 @@ const QuizArea = () => {
                 //     const options = getOptions(index.incorrect_answers, index.correct_answer)
                 //     return <QuestionBox category={index.category} options={options} question={index.question} key={index.question} />
                 // })
+
                 (next <= len - 1)
                     ?
                     <div className="container p-4">

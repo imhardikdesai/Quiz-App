@@ -9,7 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0px 0px 50px 50px;
-    min-height: 465px;
+    min-height: 377px;
 }
 
 .score {
@@ -18,7 +18,7 @@
     color: #A45EDA;
     background-color: white;
     border-radius: 50%;
-    padding: 2rem 1.8rem;
+    padding: 2.7rem 1.8rem;
     margin: 2rem;
     font-weight: 600;
     text-align: center;
@@ -39,7 +39,7 @@
     border-radius: 15px;
     max-width: 440px;
     position: relative;
-    top: 116px;
+    top: 82px;
 }
 
 .semi-table {
@@ -66,4 +66,33 @@
     /* font-size: 1rem; */
     font-size: 15px;
     font-weight: 400;
+}
+
+.footer {
+    position: fixed;
+    bottom: 25px;
+    text-align: center;
+    /* border: 2px solid yellowgreen; */
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-btn {
+    color: white;
+    border-radius: 50%;
+    padding: 12px 13px;
+    font-size: 1.8rem;
+    text-decoration: none;
+    margin: 0px 15px;
+}
+
+.home-btn:hover {
+    background-color: rgba(236, 185, 255, 0.638) !important;
+    cursor: pointer;
+}
+
+.footer-text{
+    font-size: 11px;
 }
