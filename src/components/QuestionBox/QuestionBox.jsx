@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './QuestionBox.css'
 import { Badge } from '@chakra-ui/react'
 import quizContext from '../../context/quizContext'
-// import ReactAudioPlayer from 'react-audio-player';
 import clickAudio from './../../Assets/select-sound.mp3'
 
 // #0b4b06 - bg
@@ -11,8 +10,8 @@ const audio = new Audio(clickAudio);
 
 const QuestionBox = (props) => {
 
-    // const [timer, setTimer] = useState(30)
-    let selectedAns = ''
+    // let selectedAns = ''
+    const [selectedAns, setSelectedAns] = useState('')
     const context = useContext(quizContext)
     const { setScore, score, next, setNext, len } = context
     const { question, options, category } = props
@@ -31,7 +30,8 @@ const QuestionBox = (props) => {
     }
 
     const handleOptionClick = (e) => {
-        selectedAns = (e.target.innerText.slice(1)).trim()
+        // selectedAns = (e.target.innerText.slice(1)).trim()
+        setSelectedAns((e.target.innerText.slice(1)).trim())
         console.log(selectedAns)
         audio.play();
     }
@@ -39,33 +39,34 @@ const QuestionBox = (props) => {
     const handleNextQuestion = () => {
         if (next <= len - 1) {
             checkAnswer(selectedAns)
+            setSelectedAns('')
             setNext(next + 1)
         }
     }
 
-
     // for reverse timer
+    const [timer, setTimer] = useState(30)
 
-    // useEffect(() => {
-    //     let myInterval = setInterval(() => {
-    //         if (timer > 0) {
-    //             setTimer(timer - 1)
-    //         } else {
-    //             setNext(next + 1)
-    //         }
-    //     }, 1000)
-    //     return () => {
-    //         clearInterval(myInterval);
-    //     };
-    // })
+    useEffect(() => {
+        let myInterval = setInterval(() => {
+            if (timer > 0) {
+                setTimer(timer - 1)
+            } else {
+                setNext(next + 1)
+            }
+        }, 1000)
+        return () => {
+            clearInterval(myInterval);
+        };
+    })
 
 
     return (
         <>
             <div className="q-box mx-auto my-5 p-4 text-center">
                 <div className="q-box_head">
-                    {/* <div className="q-box_timer">{timer}s</div> */}
-                    <div className="q-box_timer">{next+1}</div>
+                    <div className="q-box_timer">{timer}s</div>
+                    {/* <div className="q-box_timer">{next + 1}</div> */}
                     <div className="q-question" dangerouslySetInnerHTML={{ __html: question }}></div>
                 </div>
                 <div className="q-box_body">

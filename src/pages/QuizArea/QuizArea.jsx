@@ -21,6 +21,7 @@ const QuizArea = () => {
         }
     }
 
+   
     return (
         <>
             {
