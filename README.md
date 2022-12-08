@@ -38,7 +38,7 @@
 
 ## Overview 🔨
 
-This Currency Converter web app is built using React.js and Chakra UI. It provides a simple and intuitive way to convert any currency in the world. With an easy-to-use interface, all you have to do is enter the amount you'd like to convert and select the currency you're converting from and to. The app will then show you the exchange rate and the amount you'll receive in the other currency. This app also includes a currency calculator so you can quickly calculate the amount you need to convert. With a fast loading time and a sleek design, this web app is perfect for anyone looking to quickly and accurately convert currencies.
+This quiz web app is built using React JS. It can allow the user to select the criteria for their quiz from a list of options. The user can then proceed to answer the questions in the quiz and their performance will be tracked and shown in the scoreboard. Moreover, the app can be designed to be responsive and user-friendly.
 
   <br />
 
