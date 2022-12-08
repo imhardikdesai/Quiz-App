@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+<h1 align="center">
+       ✨  Quiz Web App  ✨
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+![Badge](https://img.shields.io/badge/Tech_Stack-HTML-orange) ![Badge](https://img.shields.io/badge/CSS-blue) ![Badge](https://img.shields.io/badge/React_Js-cyan)
+ ![Badge](https://img.shields.io/badge/-Java_Script-yellow) ![Badge](https://img.shields.io/badge/Version-1.0-green) 
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+<h3 align="center">
+          Live Project : https://ask-quiz.netlify.app/
+</h3>
+<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack : <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/react%20-%2314354C.svg?&style=for-the-badge&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/> <img src="https://img.shields.io/badge/Chakra_UI-6066C7?style=for-the-badge&logo=chakraui&logoColor=white"/> 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+- **Frontend:** HTML,CSS,React Js, Java Script, Bootstrap, Chakra UI 
+- **Version Control:** Git and GitHub
+- **Hosting:** Netlify
+- **Code Editor and tools**: VS Code
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ <br />
 
-### `npm run build`
+   <p align="center">✨ Welcome to Quiz Web App ✨ <br /></p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Table of Contents
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - Overview
+    - UI of Website
+    - Contribution Guideline
 
-### `npm run eject`
+ <br />
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Overview 🔨
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This Currency Converter web app is built using React.js and Chakra UI. It provides a simple and intuitive way to convert any currency in the world. With an easy-to-use interface, all you have to do is enter the amount you'd like to convert and select the currency you're converting from and to. The app will then show you the exchange rate and the amount you'll receive in the other currency. This app also includes a currency calculator so you can quickly calculate the amount you need to convert. With a fast loading time and a sleek design, this web app is perfect for anyone looking to quickly and accurately convert currencies.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  <br />
 
-## Learn More
+## UI of the Website
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Screenshot (280)](https://user-images.githubusercontent.com/87645745/206394866-4e74fd37-3af4-4bca-8ebe-f3810598d869.png) 
+### Home Page 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![image](https://user-images.githubusercontent.com/87645745/206397113-b70dc86a-c78c-4f6c-bf61-8183c4c07262.png)  
+### Question Page 
 
-### Code Splitting
+![image](https://user-images.githubusercontent.com/87645745/206397461-168cfe8f-2cbe-4d5e-a268-3540baf69ca5.png) 
+### Score Board Page 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br/>
 
-### Analyzing the Bundle Size
+## Setup Steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Go to directory
+```
+$ cd Quiz-App
+```
+- Install Dependency 
+```
+npm install
+```
+- Start LocalHost Server
+```
+npm run start
+```
+  <br />
 
-### Making a Progressive Web App
+## Contribution Guidelines 🏗
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ To start contributing, follow the below guidelines:
 
-### Advanced Configuration
+**1.** Fork [this](https://github.com/imhardikdesai/Quiz-App) repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**2.** Clone your forked copy of the project.
 
-### Deployment
+```
+git clone https://github.com/imhardikdesai/Quiz-App.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**3.** Navigate to the project directory :file_folder: .
 
-### `npm run build` fails to minify
+```
+cd Quiz-App
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**4.** Add a reference(remote) to the original repository.
+
+```
+git remote add upstream Quiz-App.git
+```
+
+**5.** Check the remotes for this repository.
+
+```
+git remote -v
+```
+
+**6.** Create a new branch.
+
+```
+git checkout -b <your_branch_name>
+```
+
+**7.** Perfom your desired changes to the code base.
+
+**8.** Track your changes:heavy_check_mark: .
+
+```
+git add .
+```
+
+**9.** Commit your changes .
+
+```
+git commit -m "Relevant message"
+```
+
+**10.** Push the committed changes in your feature branch to your remote repo.
+
+```
+git push -u origin <your_branch_name>
+```
+
+**11.** To create a pull request, click on `compare and pull requests`.
+
+**12.** Add appropriate title and description to your pull request explaining your changes and efforts done.
+
+**13.** Click on `Create Pull Request`.
+
+**14** You did it! 🥳 Wait for your submission to be accepted and your PR to be merged.
+
+<br />
