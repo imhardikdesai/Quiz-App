@@ -30,15 +30,15 @@ const QuestionBox = (props) => {
 
     const handleOptionClick = (e) => {
         setSelectedAns((e.target.innerText.slice(1)).trim())
-        const currentAlpha = e.target.innerText[0]
+        // const currentAlpha = e.target.innerText[0]
         // console.log(selectedAns)
         // console.log(e.target)
         audio.play();
-        if (selectedAns.includes(options[1])) {
-            document.getElementById(currentAlpha).classList.add('right')
-        } else {
-            document.getElementById(currentAlpha).classList.add('wrong')
-        }
+        // if (selectedAns.includes(options[1])) {
+        //     document.getElementById(currentAlpha).classList.add('right')
+        // } else {
+        //     document.getElementById(currentAlpha).classList.add('wrong')
+        // }
     }
 
     const handleNextQuestion = () => {
