@@ -10,7 +10,6 @@ const audio = new Audio(clickAudio);
 
 const QuestionBox = (props) => {
 
-    // let selectedAns = ''
     const [selectedAns, setSelectedAns] = useState('')
     const context = useContext(quizContext)
     const { setScore, score, next, setNext, len } = context
@@ -30,10 +29,16 @@ const QuestionBox = (props) => {
     }
 
     const handleOptionClick = (e) => {
-        // selectedAns = (e.target.innerText.slice(1)).trim()
         setSelectedAns((e.target.innerText.slice(1)).trim())
-        console.log(selectedAns)
+        const currentAlpha = e.target.innerText[0]
+        // console.log(selectedAns)
+        // console.log(e.target)
         audio.play();
+        if (selectedAns.includes(options[1])) {
+            document.getElementById(currentAlpha).classList.add('right')
+        } else {
+            document.getElementById(currentAlpha).classList.add('wrong')
+        }
     }
 
     const handleNextQuestion = () => {
@@ -73,7 +78,7 @@ const QuestionBox = (props) => {
                     {
                         options[0].map((index) => {
                             i++;
-                            return <div key={index} onClick={handleOptionClick} className="q-box_options">
+                            return <div id={alphabet[i]} key={index} onClick={handleOptionClick} className={`q-box_options`}>
                                 <div className='option-icon'>{alphabet[i]}</div> <div dangerouslySetInnerHTML={{ __html: index }}></div>
                             </div>
                         })

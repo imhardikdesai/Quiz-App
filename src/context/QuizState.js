@@ -6,6 +6,7 @@ const QuizState = (props) => {
     const [questions, setQuestions] = useState([]);
     const [score, setScore] = useState({ 'rightAnswers': 0, 'wrongAnswers': 0 });
     const [next, setNext] = useState(0)
+    // const demoURL = 'https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple'
     const [url, setUrl] = useState('');
     const [loading, setLoading] = useState(false);
     const len = questions.length;
@@ -19,7 +20,7 @@ const QuizState = (props) => {
         setLoading(false);
     };
 
-    
+
 
     useEffect(() => {
         fetchQuestions(url);
@@ -38,11 +39,11 @@ const QuizState = (props) => {
     //     };
     // }, [next]);
 
-   
+
 
 
     return (
-        <QuizContext.Provider value={{len, questions, setQuestions, url, setUrl, fetchQuestions, loading, setLoading, score, setScore, next, setNext }}>
+        <QuizContext.Provider value={{ len, questions, setQuestions, url, setUrl, fetchQuestions, loading, setLoading, score, setScore, next, setNext }}>
             {props.children}
         </QuizContext.Provider>
     )
