@@ -17,6 +17,14 @@ const QuestionBox = (props) => {
     //Here options[0] = options array and options[1] = correct answer
     let i = -1
     const alphabet = ['A', 'B', 'C', 'D']
+    const removeClass = () => {
+        let element = document.getElementsByClassName('q-box_body')
+        for (let i = 0; i < element.length; i++) {
+            for (let j = 0; j < element[i].children.length; j++) {
+                element[i].children[j].classList.remove('optionSelected')
+            }
+        }
+    }
 
     const checkAnswer = (selectedAns) => {
         if (selectedAns === '') {
@@ -29,11 +37,11 @@ const QuestionBox = (props) => {
     }
 
     const handleOptionClick = (e) => {
-        setSelectedAns((e.target.innerText.slice(1)).trim())
-        // const currentAlpha = e.target.innerText[0]
-        // console.log(selectedAns)
-        // console.log(e.target)
         audio.play();
+        removeClass()
+        setSelectedAns((e.target.innerText.slice(1)).trim())
+        const currentAlpha = e.target.innerText[0]
+        document.getElementById(currentAlpha).classList.add('optionSelected')
         // if (selectedAns.includes(options[1])) {
         //     document.getElementById(currentAlpha).classList.add('right')
         // } else {
@@ -78,7 +86,7 @@ const QuestionBox = (props) => {
                     {
                         options[0].map((index) => {
                             i++;
-                            return <div id={alphabet[i]} key={index} onClick={handleOptionClick} className={`q-box_options`}>
+                            return <div id={alphabet[i]} key={index} onClick={handleOptionClick} className="q-box_options">
                                 <div className='option-icon'>{alphabet[i]}</div> <div dangerouslySetInnerHTML={{ __html: index }}></div>
                             </div>
                         })
