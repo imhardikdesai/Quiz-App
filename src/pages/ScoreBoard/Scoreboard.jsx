@@ -5,6 +5,7 @@ import { AiOutlineHome, AiOutlineEye } from 'react-icons/ai'
 import { BiReset } from 'react-icons/bi'
 import { BsShare } from 'react-icons/bs'
 import quizContext from '../../context/quizContext'
+import { Link as ReachLink } from 'react-router-dom'
 
 const Scoreboard = (props) => {
     const context = useContext(quizContext)
@@ -83,10 +84,14 @@ const Scoreboard = (props) => {
                         <div className='footer-text'>Share Score</div>
                     </div>
                     <div className="text-center">
-                        <div style={{ backgroundColor: '#BF8D6F' }} className="home-btn">
-                            <AiOutlineEye />
+                        <ReachLink to='/review'>
+                            <div style={{ backgroundColor: '#BF8D6F' }} className="home-btn">
+                                <AiOutlineEye />
+                            </div>
+                        </ReachLink>
+                        <div className='footer-text'>
+                            Review Answer
                         </div>
-                        <div className='footer-text'>Review Answer</div>
                     </div>
                     <div className="text-center" onClick={handlePlayAgain}>
                         <div style={{ backgroundColor: '#5492B3' }} className="home-btn">

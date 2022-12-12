@@ -1,23 +1,7 @@
-import { Box, Flex, Avatar, HStack, Link, IconButton, useDisclosure, useColorModeValue, Stack, } from '@chakra-ui/react';
+import { Box, Flex, Avatar, HStack, IconButton, useDisclosure, useColorModeValue, Stack, } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import logo from './../../Assets/logo.png'
-
-const Links = ['Home', 'About'];
-
-const NavLink = (link) => (
-    <Link
-        px={2}
-        py={1}
-        rounded={'md'}
-        _hover={{
-            textDecoration: 'none',
-            bg: useColorModeValue('gray.200', 'gray.700'),
-        }}
-        key={link.children}
-        to={'/'}>
-        {link.children}
-    </Link>
-);
+import { Link as ReachLink } from 'react-router-dom'
 
 export default function Simple() {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -48,9 +32,10 @@ export default function Simple() {
                             as={'nav'}
                             spacing={4}
                             display={{ base: 'none', md: 'flex' }}>
-                            {Links.map((link) => (
-                                <NavLink key={link}>{link}</NavLink>
-                            ))}
+                            <ReachLink px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none' }} to="/">Home
+                            </ReachLink>
+                            <ReachLink px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none' }} to="/about">About
+                            </ReachLink>
                         </HStack>
                     </HStack>
                 </Flex>
@@ -58,9 +43,17 @@ export default function Simple() {
                 {isOpen ? (
                     <Box pb={4} display={{ md: 'none' }}>
                         <Stack as={'nav'} spacing={4}>
-                            {Links.map((link) => (
-                                <NavLink key={link}>{link}</NavLink>
-                            ))}
+                            {/* <ReachLink to="/">
+                            <Link px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none' }} key={'home'} to={'/about'}>Home</Link>
+                            </ReachLink>
+
+                            <ReachLink to="/about">
+                            <Link px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none' }} key={'about'} to={'/about'}>About</Link> 
+                            </ReachLink> */}
+                            <ReachLink px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none' }} to="/">Home
+                            </ReachLink>
+                            <ReachLink px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none' }} to="/about">About
+                            </ReachLink>
                         </Stack>
                     </Box>
                 ) : null}

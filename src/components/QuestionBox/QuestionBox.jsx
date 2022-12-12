@@ -12,7 +12,7 @@ const QuestionBox = (props) => {
 
     const [selectedAns, setSelectedAns] = useState('')
     const context = useContext(quizContext)
-    const { setScore, score, next, setNext, len } = context
+    const { setScore, score, next, setNext, len, answerList, setAnswerList } = context
     const { question, options, category } = props
     //Here options[0] = options array and options[1] = correct answer
     let i = -1
@@ -54,6 +54,7 @@ const QuestionBox = (props) => {
             checkAnswer(selectedAns)
             setSelectedAns('')
             setNext(next + 1)
+            setAnswerList([...answerList, { 'myAnswer': selectedAns, 'rightAnswer': options[1] }])
         }
     }
 

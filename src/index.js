@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { extendTheme, ChakraProvider } from '@chakra-ui/react'
+import { BrowserRouter as Router } from 'react-router-dom'
 const colors = {
   brand: {
     900: '#1a365d',
@@ -17,7 +18,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </ChakraProvider>
   </React.StrictMode>
 );
