@@ -66,14 +66,3 @@
 /* quiz box options  */
 
 
-.wrong {
-    background-color: #993d48e3;
-}
-
-.right {
-    background-color: #2c684be3;
-}
-
-.optionSelected {
-    background-color: #3d1f463d;
-}

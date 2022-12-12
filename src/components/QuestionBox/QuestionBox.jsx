@@ -54,7 +54,7 @@ const QuestionBox = (props) => {
             checkAnswer(selectedAns)
             setSelectedAns('')
             setNext(next + 1)
-            setAnswerList([...answerList, { 'myAnswer': selectedAns, 'rightAnswer': options[1] }])
+            setAnswerList([...answerList, { 'question': question, 'options': options[0], 'category': category, 'myAnswer': selectedAns, 'rightAnswer': options[1] }])
         }
     }
 

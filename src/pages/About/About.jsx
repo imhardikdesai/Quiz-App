@@ -118,7 +118,7 @@ export default function About() {
                 </chakra.h2>
             </Box>
             <SimpleGrid
-                columns={{ base: 1, xl: 2 }}
+                columns={{ base: 1, xl: 1 }}
                 spacing={'20'}
                 mt={16}
                 mx={'auto'}>
