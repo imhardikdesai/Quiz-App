@@ -9,7 +9,7 @@ import { Link as ReachLink } from 'react-router-dom'
 
 const Scoreboard = (props) => {
     const context = useContext(quizContext)
-    const { setNext, setScore } = context
+    const { setNext, setScore, setAnswerList } = context
     const { total_que, correct_que, wrong_que } = props
     let percentage = (correct_que / total_que) * 100
     let Attempted = (correct_que + wrong_que) / total_que * 100
@@ -21,6 +21,7 @@ const Scoreboard = (props) => {
     const handlePlayAgain = () => {
         setNext(0)
         setScore({ 'rightAnswers': 0, 'wrongAnswers': 0 })
+        setAnswerList([])
     }
     return (
         <>

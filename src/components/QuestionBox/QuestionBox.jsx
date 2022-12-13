@@ -17,6 +17,8 @@ const QuestionBox = (props) => {
     //Here options[0] = options array and options[1] = correct answer
     let i = -1
     const alphabet = ['A', 'B', 'C', 'D']
+    // let currentAlpha = ''
+
     const removeClass = () => {
         let element = document.getElementsByClassName('q-box_body')
         for (let i = 0; i < element.length; i++) {
@@ -54,8 +56,8 @@ const QuestionBox = (props) => {
             checkAnswer(selectedAns)
             setSelectedAns('')
             setNext(next + 1)
-            setAnswerList([...answerList, { 'question': question, 'options': options[0], 'category': category, 'myAnswer': selectedAns, 'rightAnswer': options[1] }])
         }
+        setAnswerList([...answerList, { 'question': question, 'options': options[0], 'category': category, 'myAnswer': selectedAns, 'rightAnswer': options[1] }])
     }
 
     // for reverse timer

@@ -1,10 +1,15 @@
 import React from 'react'
 import { Badge } from '@chakra-ui/react'
 
-const ReviewAnswerBox = ({ question, options, category, myAnswer, rightAnswer, num }) => {
+const ReviewAnswerBox = ({ question, options, category, num, classIndex }) => {
 
     let i = -1
     const alphabet = ['A', 'B', 'C', 'D']
+    // console.log(classIndex);
+    // document.getElementsByClassName('q-box_options')[classIndex.myIndex].classList.add('right')
+    // console.log(document.getElementsByClassName('q-box_options')[classIndex.myIndex]);
+
+
     return (
         <>
             <div className="q-box mx-auto my-5 p-4 text-center">
@@ -16,7 +21,7 @@ const ReviewAnswerBox = ({ question, options, category, myAnswer, rightAnswer, n
                     {
                         options.map((index) => {
                             i++;
-                            return <div id={alphabet[i]} key={index} className="q-box_options">
+                            return <div key={index} className="q-box_options">
                                 <div className='option-icon'>{alphabet[i]}</div> <div dangerouslySetInnerHTML={{ __html: index }}></div>
                             </div>
                         })

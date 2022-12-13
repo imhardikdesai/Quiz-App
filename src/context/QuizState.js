@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 
 
 const QuizState = (props) => {
+
     const [questions, setQuestions] = useState([]);
     const [score, setScore] = useState({ 'rightAnswers': 0, 'wrongAnswers': 0 });
     const [next, setNext] = useState(0);
-    // const demoURL = 'https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple'
-    const [url, setUrl] = useState('');
+    const demoURL = 'https://opentdb.com/api.php?amount=2&category=&difficulty=&type=boolean'
+    const [url, setUrl] = useState(demoURL);
     const [loading, setLoading] = useState(false);
     const len = questions.length;
     const [answerList, setAnswerList] = useState([])
@@ -23,20 +24,6 @@ const QuizState = (props) => {
     useEffect(() => {
         fetchQuestions(url);
     }, [url]);
-
-    // useEffect(() => {
-    //     let myInterval = setInterval(() => {
-    //         if (timer > 0) {
-    //             setTimer(timer - 1)
-    //         } else {
-    //             setNext(next + 1)
-    //         }
-    //     }, 1000)
-    //     return () => {
-    //         clearInterval(myInterval);
-    //     };
-    // }, [next]);
-
 
 
 

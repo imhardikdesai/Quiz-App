@@ -4,12 +4,23 @@ import ReviewAnswerBox from './../../components/ReviewAnswerBox/ReviewAnswerBox'
 const ReviewAnswer = () => {
     const context = useContext(quizContext)
     const { answerList } = context
+    const getIndex = (myAns, rightAns, options) => {
+        if (myAns === rightAns) {
+            return { 'myIndex': options.indexOf(myAns) }
+
+        } else {
+            console.log('wrong');
+        }
+    }
 
     return (
         <>
             {
                 answerList.map((index) => {
-            return <ReviewAnswerBox myAnswer={index.myAnswer} rightAnswer={index.rightAnswer} key={index.question} question={index.question} options={index.options} category={index.category} answer={index.answer} num={answerList.indexOf(index)+1}/>
+                    const { question, options, category, myAnswer, rightAnswer } = index
+                    console.log(document.getElementsByClassName('q-box_options'));
+                    console.log('next question');
+                    return <ReviewAnswerBox classIndex={getIndex(myAnswer, rightAnswer, options)} myAnswer={myAnswer} rightAnswer={rightAnswer} key={question} question={question} options={options} category={category} num={answerList.indexOf(index) + 1} />
                 })
             }
         </>
