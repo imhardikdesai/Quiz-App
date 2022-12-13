@@ -7,8 +7,8 @@ const QuizState = (props) => {
     const [questions, setQuestions] = useState([]);
     const [score, setScore] = useState({ 'rightAnswers': 0, 'wrongAnswers': 0 });
     const [next, setNext] = useState(0);
-    const demoURL = 'https://opentdb.com/api.php?amount=2&category=&difficulty=&type=boolean'
-    const [url, setUrl] = useState(demoURL);
+    // const demoURL = 'https://opentdb.com/api.php?amount=2&category=&difficulty=&type=boolean'
+    const [url, setUrl] = useState('');
     const [loading, setLoading] = useState(false);
     const len = questions.length;
     const [answerList, setAnswerList] = useState([])
