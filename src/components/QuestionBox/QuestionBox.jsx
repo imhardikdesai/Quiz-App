@@ -28,6 +28,7 @@ const QuestionBox = (props) => {
         }
     }
 
+    //Update the score 
     const checkAnswer = (selectedAns) => {
         if (selectedAns === '') {
             return true;
@@ -44,20 +45,15 @@ const QuestionBox = (props) => {
         setSelectedAns((e.target.innerText.slice(1)).trim())
         const currentAlpha = e.target.innerText[0]
         document.getElementById(currentAlpha).classList.add('optionSelected')
-        // if (selectedAns.includes(options[1])) {
-        //     document.getElementById(currentAlpha).classList.add('right')
-        // } else {
-        //     document.getElementById(currentAlpha).classList.add('wrong')
-        // }
     }
 
     const handleNextQuestion = () => {
         if (next <= len - 1) {
             checkAnswer(selectedAns)
-            setSelectedAns('')
             setNext(next + 1)
+            setSelectedAns('')
         }
-        setAnswerList([...answerList, { 'question': question, 'options': options[0], 'category': category, 'myAnswer': selectedAns, 'rightAnswer': options[1] }])
+        setAnswerList([...answerList, { 'question': question, 'options': options[0], 'id': `id${next}`, 'category': category, 'myAnswer': selectedAns, 'rightAnswer': options[1] }])
     }
 
     // for reverse timer
@@ -82,7 +78,6 @@ const QuestionBox = (props) => {
             <div className="q-box mx-auto my-5 p-4 text-center">
                 <div className="q-box_head">
                     <div className="q-box_timer">{timer}s</div>
-                    {/* <div className="q-box_timer">{next + 1}</div> */}
                     <div className="q-question" dangerouslySetInnerHTML={{ __html: question }}></div>
                 </div>
                 <div className="q-box_body">

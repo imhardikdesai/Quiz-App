@@ -16,11 +16,23 @@ code {
 }
 
 .wrong {
-  background-color: #993d48e3 !important;
+  background-color: #ee545338 !important;
+  border-color: #EE5453 !important;
+  /* #E85759 bg  */
 }
 
 .right {
-  background-color: #2c684be3 !important;
+  background-color: #28ae6138 !important;
+  border-color: #28AE61 !important;
+  /* #28AC63 bg  */
+}
+
+.rightIcon {
+  background-color: #28AE61 !important;
+}
+
+.wrongIcon {
+  background-color: #EE5453 !important;
 }
 
 .optionSelected {
