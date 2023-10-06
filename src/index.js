@@ -1,26 +1,35 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { extendTheme, ChakraProvider } from '@chakra-ui/react'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { extendTheme, ChakraProvider, CSSReset, ThemeProvider } from '@chakra-ui/react';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 const colors = {
   brand: {
     900: '#1a365d',
     800: '#153e75',
     700: '#2a69ac',
   },
-}
+};
 
-const theme = extendTheme({ colors })
+const fonts = {
+  body: 'Roboto, sans-serif', // Replace 'Roboto' with your desired font
+  heading: 'Roboto, sans-serif', // Replace 'Roboto' with your desired font
+};
+
+const theme = extendTheme({ colors, fonts });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <Router>
-        <App />
-      </Router>
+    <ChakraProvider>
+      <ThemeProvider theme={theme}>
+        <CSSReset />
+        <Router>
+          <App />
+        </Router>
+      </ThemeProvider>
     </ChakraProvider>
   </React.StrictMode>
 );
