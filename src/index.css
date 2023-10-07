@@ -1,3 +1,4 @@
+/* Reset default margin and font family for the entire document */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,36 +6,136 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   background-color: #212832 !important;
   color: white;
 }
 
+/* Define styles for code blocks */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+/* Highlight for incorrect elements or responses */
 .wrong {
   background-color: #ee545338 !important;
   border-color: #EE5453 !important;
-  /* #E85759 bg  */
 }
 
+/* Highlight for correct elements or responses */
 .right {
   background-color: #28ae6138 !important;
   border-color: #28AE61 !important;
-  /* #28AC63 bg  */
 }
 
+/* Additional styles for icons associated with correct responses */
 .rightIcon {
   background-color: #28AE61 !important;
 }
 
+/* Additional styles for icons associated with incorrect responses */
 .wrongIcon {
   background-color: #EE5453 !important;
 }
 
+/* Highlight for selected options */
 .optionSelected {
   background-color: #3d1f463d !important;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  /* Add styles for small screens */
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Typography styles for headings and paragraphs */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Button styles with hover and active effects */
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button:active {
+  background-color: #003c80;
+}
+
+/* Link styles with smooth hover transitions */
+a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Box shadows for elements */
+.box {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles for input fields and buttons */
+input[type="text"],
+input[type="email"] {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+input[type="submit"] {
+  background-color: #28ae61;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: #1f8d4d;
+}
+
+/* Smooth fading transition */
+.transition-fade {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.transition-fade:hover {
+  opacity: 0.8;
+}
+
+/* Custom styles for specific elements */
+.custom-header {
+  font-size: 32px;
+  color: #333;
+}
+
+.custom-footer {
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+  color: #777;
 }
