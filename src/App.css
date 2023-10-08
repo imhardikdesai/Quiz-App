@@ -1,4 +1,23 @@
-.App {
-  background-color: #212832;
-  color: white;
-}
+
+        .App {
+            background-color: #212832;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .App:hover {
+            background-color: #3e4f63;
+        }
+
+        @media (max-width: 768px) {
+            .App {
+                font-size: 14px;
+            }
+        }
