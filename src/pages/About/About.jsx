@@ -54,14 +54,14 @@ function TestimonialCard(props) {
                 textAlign={'left'}
                 justifyContent={'space-between'}>
                 <chakra.p
-                    color={'gray.700'}
+                    color={'gray.400'}
                     fontFamily={'Inter'}
                     fontWeight={'medium'}
                     fontSize={'15px'}
                     pb={4}>
                     {content}
                 </chakra.p>
-                <chakra.p fontFamily={'Work Sans'} color={'gray.700'} fontWeight={'bold'} fontSize={14}>
+                <chakra.p fontFamily={'Work Sans'} color={'gray.400'} fontWeight={'bold'} fontSize={14}>
                     {name}
                     <chakra.span
                         fontFamily={'Inter'}
