@@ -96,3 +96,12 @@
 .footer-text{
     font-size: 11px;
 }
+
+@media (max-width:600px) {
+    .score {
+        border-radius: 50%;
+        padding: 2rem 1.2rem;
+        
+    }
+    
+}
