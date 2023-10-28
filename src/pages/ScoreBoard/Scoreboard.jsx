@@ -35,37 +35,41 @@ const Scoreboard = (props) => {
                     <div className="semi-table">
                         <div style={{ backgroundColor: '#A45EDA' }} className="circle"></div>
                         <div className='mx-2'>
-                            <div style={{ color: '#A45EDA' }} className="point">{Attempted.toFixed(2)}%</div>
-                            <div className="point-info">
+                             <div className="point-info">
                                 Attempted
                             </div>
+                            <div style={{ color: '/*#A45EDA*/#fff',width:"5.8rem",background:"#212832",padding:"0.5rem",borderRadius:"0.5rem" }} className="point">{Attempted.toFixed(2)}%</div>
+                            
                         </div>
                     </div>
                     <div className="semi-table">
-                        <div style={{ backgroundColor: '#A45EDA' }} className="circle"></div>
+                    <div style={{ backgroundColor:'#A45EDA' }} className="circle"></div>
                         <div className='mx-2'>
-                            <div style={{ color: '#A45EDA' }} className="point">{total_que}</div>
-                            <div className="point-info">
+                        <div className="point-info">
                                 Total Questions
                             </div>
+                            <div style={{ color: '#fff',width:"5.8rem",background:"#212832",padding:"0.5rem",borderRadius:"0.5rem"  }} className="point">{total_que}</div>
+                           
                         </div>
                     </div>
                     <div className="semi-table">
                         <div style={{ backgroundColor: 'rgb(6 143 86)' }} className="circle"></div>
                         <div className='mx-2'>
-                            <div style={{ color: 'rgb(6 143 86)' }} className="point">{correct_que}</div>
-                            <div className="point-info">
+                        <div className="point-info">
                                 Correct
                             </div>
+                            <div style={{ color: '/*rgb(6 143 86)*/#fff',background:"#212832",padding:"0.5rem",width:"5.8rem",borderRadius:"0.5rem"  }} className="point">{correct_que}</div>
+                           
                         </div>
                     </div>
                     <div className="semi-table">
                         <div style={{ backgroundColor: 'rgb(223 75 75)' }} className="circle"></div>
                         <div className='mx-2'>
-                            <div style={{ color: 'rgb(223 75 75)' }} className="point">{wrong_que}</div>
                             <div className="point-info">
                                 Wrong
                             </div>
+                            <div style={{ color: '/*rgb(223 75 75)*/#fff',width:"5.8rem",background:"#212832",padding:"0.5rem",borderRadius:"0.5rem"  }} className="point">{wrong_que}</div>
+                          
                         </div>
                     </div>
 

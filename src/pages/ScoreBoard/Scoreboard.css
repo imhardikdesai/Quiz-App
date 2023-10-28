@@ -32,19 +32,19 @@
     display: inline-flex;
     flex-wrap: wrap;
     margin: 0px 20px;
-    justify-content: space-between;
+    justify-content: center;
     /* border: 2px solid red; */
     background-color: aliceblue;
     color: black;
     border-radius: 15px;
-    max-width: 440px;
+    max-width: 430px;
     position: relative;
     top: 82px;
 }
 
 .semi-table {
     margin: 8px 6px;
-    padding: 6px 10px;
+    padding: 6px 12px;
     display: flex;
     width: 155px;
     align-items: baseline;
@@ -69,11 +69,13 @@
 }
 
 .footer {
-    position: fixed;
+    /* position: fixed; */
+    height: 15rem;
     bottom: 25px;
     text-align: center;
+    padding-top: 4rem;
     /* border: 2px solid yellowgreen; */
-    width: 500px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,3 +98,4 @@
 .footer-text{
     font-size: 11px;
 }
+

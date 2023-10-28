@@ -21,7 +21,7 @@ export default function BetterNavbar() {
   return (
     <>
       <Box
-        bg={useColorModeValue('gray.100', 'gray.900')}
+        bg={useColorModeValue('#212832', 'gray.900')}
         px={4}
         borderBottom="1px solid"
         borderColor={useColorModeValue('gray.200', 'gray.700')}
