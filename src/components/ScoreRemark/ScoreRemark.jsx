@@ -45,13 +45,11 @@ const ScoreRemark = ({ percentage }) => {
             },
         ];
 
-        const pickReview = reviews.find((rev) => {
-            if (percentage >= rev.lowest && percentage <= rev.highest) {
-                return rev;
-            }
-        });
+        const pickRemark = reviews.find(
+            (rev) => percentage >= rev.lowest && percentage <= rev.highest
+        );
 
-        return pickReview;
+        return pickRemark;
     };
 
     const remarkData = generateRemark();
