@@ -3,7 +3,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-image: url('./../../Assets/scoreboard-bg.jpg');
+    background-image: url("./../../Assets/scoreboard-bg.jpg");
     /* background: linear-gradient(179deg, #58158c 0%, #e8c3ff 100%); */
     background-position: center;
     background-repeat: no-repeat;
@@ -12,14 +12,25 @@
     min-height: 377px;
 }
 
+.score-container,
+.remark-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.remark-container {
+    line-height: 25px;
+}
+
 .score {
     /* border: 6px solid rgba(128, 128, 128, 0.345); */
     font-size: 1.2rem;
-    color: #A45EDA;
+    color: #a45eda;
     background-color: white;
     border-radius: 50%;
     padding: 3rem 1.8rem;
-    margin: 2rem;
+    margin: 2rem 0 18px 0;
     font-weight: 600;
     text-align: center;
 }
@@ -95,7 +106,6 @@
     cursor: pointer;
 }
 
-.footer-text{
+.footer-text {
     font-size: 11px;
 }
-
