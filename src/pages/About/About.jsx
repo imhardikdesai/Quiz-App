@@ -3,7 +3,7 @@ import { Avatar, Box, chakra, Flex, Icon, SimpleGrid, useColorModeValue, } from 
 const testimonials = [
     {
         name: 'Hardik Desai',
-        role: 'Fronted Web Developer',
+        role: 'Frontend Web Developer',
         content:
             'This quiz web app is built using React JS. It can allow the user to select the criteria for their quiz from a list of options. The user can then proceed to answer the questions in the quiz and their performance will be tracked and shown in the scoreboard. Moreover, the app can be designed to be responsive and user-friendly.',
         avatar:
@@ -54,19 +54,19 @@ function TestimonialCard(props) {
                 textAlign={'left'}
                 justifyContent={'space-between'}>
                 <chakra.p
-                    color={'gray.400'}
+                    color={'gray.700'}
                     fontFamily={'Inter'}
                     fontWeight={'medium'}
                     fontSize={'15px'}
                     pb={4}>
                     {content}
                 </chakra.p>
-                <chakra.p fontFamily={'Work Sans'} color={'gray.400'} fontWeight={'bold'} fontSize={14}>
+                <chakra.p fontFamily={'Work Sans'} color={'gray.800'} fontWeight={'bold'} fontSize={14}>
                     {name}
                     <chakra.span
                         fontFamily={'Inter'}
                         fontWeight={'medium'}
-                        color={'gray.500'}>
+                        color={'gray.900'}>
                         {' '}
                         - {role}
                     </chakra.span>
