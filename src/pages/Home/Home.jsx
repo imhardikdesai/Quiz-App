@@ -13,6 +13,7 @@ const Home = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const { number, category, difficulty, type } = formData
+        localStorage.setItem('timer',30)
         setUrl(`https://opentdb.com/api.php?amount=${number}&category=${category}&difficulty=${difficulty}&type=${type}`, fetchQuestions(url))
         setLoading(true)
     }
