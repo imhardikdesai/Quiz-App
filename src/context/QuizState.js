@@ -1,7 +1,9 @@
 import QuizContext from "./quizContext";
 import { useEffect, useState } from "react";
 
-
+const value = useMemo(() => ({
+    answerList, setAnswerList, len, questions, setQuestions, url, setUrl, fetchQuestions, loading, setLoading, score, setScore, next, setNext
+}), [answerList, len, questions, url, loading, score, next]);
 const QuizState = (props) => {
 
     const [questions, setQuestions] = useState([]);
@@ -28,7 +30,7 @@ const QuizState = (props) => {
 
 
     return (
-        <QuizContext.Provider value={{ answerList, setAnswerList, len, questions, setQuestions, url, setUrl, fetchQuestions, loading, setLoading, score, setScore, next, setNext }}>
+        <QuizContext.Provider value={value}>
             {props.children}
         </QuizContext.Provider>
     )
