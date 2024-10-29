@@ -109,3 +109,34 @@
 .footer-text {
     font-size: 11px;
 }
+@media (max-width: 768px) {
+    .main {
+        min-height: 300px;
+        padding: 15px;
+    }
+
+    .score {
+        padding: 2rem 1rem;
+        font-size: 1rem;
+    }
+
+    .score span {
+        font-size: 1.8rem;
+    }
+
+    .footer {
+        padding-top: 2rem;
+        height: auto;
+        gap: 10px;
+    }
+
+    .home-btn {
+        font-size: 1.8rem;
+    }
+
+    #footer-container{
+        display: flex;
+        height: 40vh;
+        align-items: flex-end;
+    }
+}
