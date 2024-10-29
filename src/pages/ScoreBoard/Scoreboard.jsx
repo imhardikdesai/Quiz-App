@@ -124,7 +124,10 @@ const Scoreboard = (props) => {
                     </div>
                 </div>
 
-                <div className="footer">
+ 
+            </div>
+            <div id='footer-container'>
+            <div className="footer">
                     <div className="text-center" onClick={handleGoHome}>
                         <div
                             style={{ backgroundColor: "#BE709F" }}
