@@ -52,17 +52,22 @@ const QuestionBox = (props) => {
             checkAnswer(selectedAns)
             setNext(next + 1)
             setSelectedAns('')
+            localStorage.setItem('timer',30)
         }
         setAnswerList([...answerList, { 'question': question, 'options': options[0], 'id': `id${next}`, 'category': category, 'myAnswer': selectedAns, 'rightAnswer': options[1] }])
     }
 
     // for reverse timer
-    const [timer, setTimer] = useState(30)
+    const [timer, setTimer] = useState(()=>{
+        const savedTimer = localStorage.getItem('timer')
+        return savedTimer? parseInt(savedTimer):30
+    })
 
     useEffect(() => {
         let myInterval = setInterval(() => {
             if (timer > 0) {
                 setTimer(timer - 1)
+                localStorage.setItem('timer',timer-1)
             } else {
                 setNext(next + 1)
             }
