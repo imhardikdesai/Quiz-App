@@ -1,4 +1,22 @@
 .App {
-  background-color: #212832;
-  color: white;
+  background-color: #212832; /* Set the background color to a dark shade */
+  color: white; /* Set the text color to white for better readability */
+
+  /* Add padding to the content for spacing and readability */
+  padding: 20px;
+
+  /* Add a border-radius to round the corners of the container */
+  border-radius: 10px;
+
+  /* Add a box shadow for a subtle elevation effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  /* Center the container horizontally and vertically on the page */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Set a minimum height to ensure content is visible */
+  min-height: 100vh;
 }
