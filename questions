@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class QuizApp {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Questions and Answers
+        String[][] questions = {
+            {"What is the capital of France?", "a) Berlin", "b) Madrid", "c) Paris", "d) Rome", "c"},
+            {"Which company created Java?", "a) Microsoft", "b) Sun Microsystems", "c) Google", "d) Apple", "b"},
+            {"What is 5 + 3?", "a) 5", "b) 8", "c) 10", "d) 15", "b"},
+            {"Which keyword is used to create an object in Java?", "a) new", "b) class", "c) object", "d) create", "a"},
+            {"Which of the following is a Java framework?", "a) Angular", "b) Django", "c) Spring", "d) Flask", "c"}
+        };
+
+        int score = 0;
+
+        // Iterate through questions
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println("\nQuestion " + (i + 1) + ": " + questions[i][0]);
+            System.out.println(questions[i][1]);
+            System.out.println(questions[i][2]);
+            System.out.println(questions[i][3]);
+            System.out.println(questions[i][4]);
+
+            // Get user input
+            System.out.print("Your answer: ");
+            String answer = scanner.nextLine().toLowerCase();
+
+            // Check the answer
+            if (answer.equals(questions[i][5])) {
+                System.out.println("Correct!");
+                score++;
+            } else {
+                System.out.println("Wrong! The correct answer was: " + questions[i][5]);
+            }
+        }
+
+        // Display final score
+        System.out.println("\nQuiz Over! Your final score is: " + score + "/" + questions.length);
+
+        scanner.close();
+    }
+}
