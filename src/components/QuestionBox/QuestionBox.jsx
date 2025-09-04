@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './QuestionBox.css'
-import { Badge } from '@chakra-ui/react'
+import { Badge,Progress } from '@chakra-ui/react'
 import quizContext from '../../context/quizContext'
 import clickAudio from './../../Assets/select-sound.mp3'
 
@@ -39,17 +39,21 @@ const QuestionBox = (props) => {
         }
     }
 
-    const handleOptionClick = (e) => {
+    const handleOptionClick = (selected) => {
         audio.play();
-        removeClass()
-        setSelectedAns((e.target.innerText.slice(1)).trim())
-        const currentAlpha = e.target.innerText[0]
-        document.getElementById(currentAlpha).classList.add('optionSelected')
+        removeClass();
+        setSelectedAns(selected);
+
+        const currentAlpha = alphabet[options[0].indexOf(selected)];
+        document.getElementById(currentAlpha).classList.add('optionSelected');
+
+        checkAnswer(selected);
     }
+
 
     const handleNextQuestion = () => {
         if (next <= len - 1) {
-            checkAnswer(selectedAns)
+           // checkAnswer(selectedAns)
             setNext(next + 1)
             setSelectedAns('')
             localStorage.setItem('timer',30)
@@ -81,19 +85,45 @@ const QuestionBox = (props) => {
     return (
         <>
             <div className="q-box mx-auto my-5 p-4 text-center">
+                {/* Progress Bar */}
+                <div className="progress-container">
+                    <div className="progress-label">{`Question ${next + 1} of ${len}`}</div>
+                        <Progress
+                            colorScheme="green"
+                            size="sm"
+                            value={(next / len) * 100}
+                            className="custom-progress-bar"
+                        />
+                </div>
                 <div className="q-box_head">
                     <div className="q-box_timer">{timer}s</div>
                     <div className="q-question" dangerouslySetInnerHTML={{ __html: question }}></div>
                 </div>
                 <div className="q-box_body">
-                    {
-                        options[0].map((index) => {
-                            i++;
-                            return <div id={alphabet[i]} key={index} onClick={handleOptionClick} className="q-box_options">
-                                <div className='option-icon'>{alphabet[i]}</div> <div dangerouslySetInnerHTML={{ __html: index }}></div>
+                    {options[0].map((optionText, index) => {
+                        i++;
+
+                        const isSelected = selectedAns === optionText;
+                        const isCorrect = isSelected && optionText === options[1];
+                        const isIncorrect = isSelected && optionText !== options[1];
+
+                        const optionClass = `q-box_options
+                            ${isSelected ? 'optionSelected' : ''}
+                            ${isCorrect ? 'optionCorrect' : ''}
+                            ${isIncorrect ? 'optionIncorrect' : ''}`.trim();
+
+                        return (
+                            <div
+                            id={alphabet[i]}
+                            key={index}
+                            onClick={() => handleOptionClick(optionText)}
+                            className={optionClass}
+                            >
+                            <div className='option-icon'>{alphabet[i]}</div>
+                            <div dangerouslySetInnerHTML={{ __html: optionText }}></div>
                             </div>
-                        })
-                    }
+                        );
+                    })}
                 </div>
                 <div className="d-flex flex-wrap justify-content-between align-items-center mx-3">
                     <Badge colorScheme='purple'>{category}</Badge>
