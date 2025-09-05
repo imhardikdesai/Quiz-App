@@ -53,7 +53,7 @@ const QuestionBox = (props) => {
 
     const handleNextQuestion = () => {
         if (next <= len - 1) {
-           // checkAnswer(selectedAns)
+            checkAnswer(selectedAns)
             setNext(next + 1)
             setSelectedAns('')
             localStorage.setItem('timer',30)
@@ -101,28 +101,23 @@ const QuestionBox = (props) => {
                 </div>
                 <div className="q-box_body">
                     {options[0].map((optionText, index) => {
-                        i++;
-
-                        const isSelected = selectedAns === optionText;
-                        const isCorrect = isSelected && optionText === options[1];
-                        const isIncorrect = isSelected && optionText !== options[1];
+                        i++
+                        const isSelected = selectedAns === optionText
 
                         const optionClass = `q-box_options
-                            ${isSelected ? 'optionSelected' : ''}
-                            ${isCorrect ? 'optionCorrect' : ''}
-                            ${isIncorrect ? 'optionIncorrect' : ''}`.trim();
+                            ${isSelected ? 'optionSelected' : ''}`.trim()
 
                         return (
                             <div
-                            id={alphabet[i]}
-                            key={index}
-                            onClick={() => handleOptionClick(optionText)}
-                            className={optionClass}
+                                id={alphabet[i]}
+                                key={index}
+                                onClick={() => handleOptionClick(optionText)}
+                                className={optionClass}
                             >
-                            <div className='option-icon'>{alphabet[i]}</div>
-                            <div dangerouslySetInnerHTML={{ __html: optionText }}></div>
+                                <div className='option-icon'>{alphabet[i]}</div>
+                                <div dangerouslySetInnerHTML={{ __html: optionText }}></div>
                             </div>
-                        );
+                        )
                     })}
                 </div>
                 <div className="d-flex flex-wrap justify-content-between align-items-center mx-3">

@@ -104,16 +104,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .optionSelected {
-    border: 2px solid #53a24db5;
+    border: 2px solid #66486db5;
     background-color: #f0f8ff;
-}
-
-.optionCorrect {
-    background-color: green !important;
-    color: white;
-}
-
-.optionIncorrect {
-    background-color: red !important;
-    color: white;
 }
