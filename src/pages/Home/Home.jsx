@@ -4,11 +4,15 @@ import QuizArea from '../QuizArea/QuizArea'
 import quizContext from '../../context/quizContext'
 import { HashLoader } from 'react-spinners';
 import { Text } from '@chakra-ui/react'
+import MapComponent from '../../components/MapComponent/MapComponent';
 
 const Home = () => {
     const context = useContext(quizContext)
     const { setUrl, url, fetchQuestions, setLoading, loading, questions } = context
     const [formData, setFormData] = useState({ number: '', category: '', difficulty: '', type: '' })
+    
+    // eslint-disable-next-line no-unused-vars
+    const [location, setLocation] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,6 +45,7 @@ const Home = () => {
                         <Text mb={'4'} fontSize='4xl'>Start your Quiz Now</Text>
                         <hr />
                         <Form handleSubmit={handleSubmit} onChange={onChange} />
+                        <MapComponent setLocation={setLocation} />
                     </div>
                     :
                     <QuizArea />
