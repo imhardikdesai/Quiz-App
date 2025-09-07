@@ -47,7 +47,6 @@ const QuestionBox = (props) => {
         const currentAlpha = alphabet[options[0].indexOf(selected)];
         document.getElementById(currentAlpha).classList.add('optionSelected');
 
-        checkAnswer(selected);
     }
 
 
@@ -91,7 +90,7 @@ const QuestionBox = (props) => {
                         <Progress
                             colorScheme="green"
                             size="sm"
-                            value={(next / len) * 100}
+                            value={len > 0 ? (next / len) * 100 : 0}
                             className="custom-progress-bar"
                         />
                 </div>
