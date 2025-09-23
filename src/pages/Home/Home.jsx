@@ -4,11 +4,16 @@ import QuizArea from '../QuizArea/QuizArea'
 import quizContext from '../../context/quizContext'
 import { HashLoader } from 'react-spinners';
 import { Text } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
+import { Button } from '@chakra-ui/react';
 
 const Home = () => {
     const context = useContext(quizContext)
     const { setUrl, url, fetchQuestions, setLoading, loading, questions } = context
     const [formData, setFormData] = useState({ number: '', category: '', difficulty: '', type: '' })
+    
+    // eslint-disable-next-line no-unused-vars
+    const [location, setLocation] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,6 +23,7 @@ const Home = () => {
         setLoading(true)
     }
 
+   
     const onChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
@@ -34,6 +40,7 @@ const Home = () => {
                     style={{ backgroundColor: '#4d4d4dcc', width: '100%', height: '100vh', position: 'absolute', top: '13%' }}
                 />
             </div>
+            
             {
                 (url === '' || questions.length === 0)
                     ?
@@ -41,6 +48,11 @@ const Home = () => {
                         <Text mb={'4'} fontSize='4xl'>Start your Quiz Now</Text>
                         <hr />
                         <Form handleSubmit={handleSubmit} onChange={onChange} />
+                        <hr />
+                        <Text mb={'2'} fontSize='2xl'>Or try Map Quiz!</Text>
+                        <Link to="/map">
+                            <Button colorScheme="teal">Go to Map Quiz</Button>
+                        </Link>
                     </div>
                     :
                     <QuizArea />
