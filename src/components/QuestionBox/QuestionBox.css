@@ -3,6 +3,8 @@
     --right-answer-color: #3B6561;
     --wrong-answer-color: #6C505F;
     --common-answer-color: #4F5684;
+    --progress-bar-bg: #212832;
+    --progress-bar-fill: #7A70ED;
 }
 
 /* Quiz box */
@@ -14,6 +16,7 @@
     background-color: #414e619c;
     /* Added box shadow for depth */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 /* Quiz box head */
@@ -70,14 +73,37 @@
     transition: background-color 0.3s ease-in-out;
 }
 
-/* Style for correct answers */
-.correct-answer {
-    background-color: var(--right-answer-color); /* Use custom color variable */
-    /* Add more specific styles for correct answers here */
-}
-
 /* Style for wrong answers */
 .wrong-answer {
     background-color: var(--wrong-answer-color); /* Use custom color variable */
     /* Add more specific styles for wrong answers here */
+    animation: wrongAnswerAnim 0.5s ease-out;
+}
+
+/* Container for the progress bar */
+.progress-container {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #2d3748;
+}
+
+/* Label above the progress bar */
+.progress-label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+}
+
+/* Custom styling for the progress bar */
+.custom-progress-bar {
+    border-radius: 10px;
+    height: 12px;
+    background: linear-gradient(90deg, #53a24d, #0b4b06);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.optionSelected {
+    border: 2px solid #66486db5;
+    background-color: #f0f8ff;
 }

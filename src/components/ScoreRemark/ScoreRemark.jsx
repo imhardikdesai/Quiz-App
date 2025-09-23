@@ -1,5 +1,4 @@
 const ScoreRemark = ({ percentage }) => {
-    const generateRemark = () => {
         const reviews = [
             {
                 color: "#ff4d4f",
@@ -45,36 +44,35 @@ const ScoreRemark = ({ percentage }) => {
             },
         ];
 
-        const pickRemark = reviews.find(
-            (rev) => percentage >= rev.lowest && percentage <= rev.highest
+        const remarkData =
+            reviews.find((rev) => percentage >= rev.lowest && percentage <= rev.highest) || {
+                color: "#000",
+                remark: "N/A",
+                message: "No result available",
+            };
+
+        return (
+            <div className="remark-container">
+                <span
+                    style={{
+                        color: remarkData.color,
+                        fontSize: "30px",
+                        fontWeight: "bolder",
+                        letterSpacing: "-1px",
+                    }}
+                >
+                    {remarkData.remark}
+                </span>
+                <span
+                    style={{
+                        fontSize: "15px",
+                    }}
+                >
+                    {remarkData.message}
+                </span>
+            </div>
         );
-
-        return pickRemark;
-    };
-
-    const remarkData = generateRemark();
-
-    return (
-        <div className="remark-container">
-            <span
-                style={{
-                    color: remarkData.color,
-                    fontSize: "30px",
-                    fontWeight: "bolder",
-                    letterSpacing: "-1px",
-                }}
-            >
-                {remarkData.remark}
-            </span>
-            <span
-                style={{
-                    fontSize: "15px",
-                }}
-            >
-                {remarkData.message}
-            </span>
-        </div>
-    );
+  
 };
 
 export default ScoreRemark;
