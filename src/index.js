@@ -2,8 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { extendTheme, ChakraProvider, CSSReset, ThemeProvider } from '@chakra-ui/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import {
+  extendTheme,
+  ChakraProvider,
+  CSSReset,
+  ThemeProvider,
+  ColorModeScript,
+} from '@chakra-ui/react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const colors = {
   brand: {
@@ -11,25 +17,44 @@ const colors = {
     800: '#153e75',
     700: '#2a69ac',
   },
+  primary: '#3f51b5',
+  secondary: '#f50057',
 };
 
 const fonts = {
-  body: 'Roboto, sans-serif', // Replace 'Roboto' with your desired font
-  heading: 'Roboto, sans-serif', // Replace 'Roboto' with your desired font
+  body: 'Roboto, sans-serif',
+  heading: 'Roboto, sans-serif',
 };
 
-const theme = extendTheme({ colors, fonts });
+const theme = extendTheme({ colors, fonts, config: { initialColorMode: 'light' } });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <ChakraProvider>
-      <ThemeProvider theme={theme}>
-        <CSSReset />
-        <Router>
-          <App />
-        </Router>
-      </ThemeProvider>
+function About() {
+  return (
+    <div>
+      <h2>About Page</h2>
+      <p>This is the about page content.</p>
+    </div>
+  );
+}
+
+function NotFound() {
+  return <h2>404 Not Found</h2>;
+}
+
+function ImprovedApp() {
+  return (
+    <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <CSSReset />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/about" component={About} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
     </ChakraProvider>
-  </React.StrictMode>
-);
+  );
+}
+
+ReactDOM.render(<ImprovedApp />, document.getElementById('root'));
