@@ -1,32 +1,34 @@
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
 import QuizState from './context/QuizState';
 import Home from './pages/Home/Home';
 import MapQuizPage from './pages/MapQuiz/MapQuizPage';
-
-import {
-  Routes,
-  Route
-} from "react-router-dom";
 import About from './pages/About/About';
 import ReviewAnswer from './pages/Review/ReviewAnswer';
+import NotFound from './pages/NotFound/NotFound';
+import NavBar from './components/NavBar/NavBar';
+import { Routes, Route } from 'react-router-dom';
+
+// Layout component to include NavBar only on selected pages
+const Layout = ({ children }) => (
+  <>
+    <NavBar />
+    <div>{children}</div>
+  </>
+);
 
 function App() {
-
   return (
-    <>
-      <QuizState>
-        <div className="App">
-          <NavBar />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/review" element={<ReviewAnswer />} />
-            <Route exact path="/map" element={<MapQuizPage />} />
-          </Routes>
-        </div>
-      </QuizState>
-    </>
+    <QuizState>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Layout><Home /></Layout>} />
+          <Route path="/about" element={<Layout><About /></Layout>} />
+          <Route path="/map" element={<Layout><MapQuizPage /></Layout>} />
+          <Route path="/review" element={<Layout><ReviewAnswer /></Layout>} />
+          <Route path="*" element={<NotFound />} /> {/* 404 page without NavBar */}
+        </Routes>
+      </div>
+    </QuizState>
   );
 }
 
