@@ -1,4 +1,3 @@
-// src/NotFound.js
 import React from "react";
 import { Box, Button, Heading, Text, VStack } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
@@ -23,9 +22,13 @@ export default function NotFound() {
         <Button
           as={RouterLink}
           to="/"
-          colorScheme="purple"
+          bg="purple.500"
+          color="white"
           size="lg"
           rounded="full"
+          _hover={{ bg: "purple.500", color: "white" }}   // lock both bg + text
+          _active={{ bg: "purple.500", color: "white" }}  // same on click
+          _focus={{ boxShadow: "none", bg: "purple.500", color: "white" }} // same on focus
         >
           Go Back Home
         </Button>
