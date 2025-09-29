@@ -12,8 +12,8 @@ const Home = () => {
     const context = useContext(quizContext)
     const { setUrl, url, fetchQuestions, setLoading, loading, questions } = context
     const [formData, setFormData] = useState({ number: '', category: '', difficulty: '', type: '' })
-
-    //   const [location, setLocation] = useState(null);
+    // eslint-disable-next-line no-unused-vars
+    const [location, setLocation] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,6 +27,7 @@ const Home = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
+    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -120,8 +121,17 @@ const Home = () => {
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
+                            style={{
+                                fontSize: '2.5rem',
+                                fontWeight: 700,
+                                background: 'linear-gradient(135deg, #3585c1 0%, #28ae61 100%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                backgroundClip: 'text',
+                                marginBottom: '1rem'
+                            }}
                         >
-                            🎯 Start Your Quiz Adventure
+                            Start Your Quiz Adventure
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0 }}
