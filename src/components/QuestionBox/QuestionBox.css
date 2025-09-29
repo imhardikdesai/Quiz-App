@@ -81,3 +81,74 @@
     background-color: var(--wrong-answer-color); /* Use custom color variable */
     /* Add more specific styles for wrong answers here */
 }
+
+/*Style for reveal answer*/
+.revealAnswer {
+    border: 2px solid green;
+    background-color: #d4edda;
+}
+  
+/*Style for lifeline buttons*/
+.lifelines button {
+    border: 2px solid #3f4468b5;
+    background-color: #7A70ED; 
+    color: white;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.lifelines button:hover {
+    background-color: #3f4468b5; 
+    color: #7A70ED;
+    border-color: #3f4468b5;
+}
+
+/*Style for disabled lifeline button*/
+.lifelines button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: gray;
+    background-color: #333;
+}
+
+/*Styles for audiance help*/
+.audience-help {
+    margin-top: 15px;
+    text-align: left;
+}
+  
+.audience-bar {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+  
+.audience-label {
+    width: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+  
+.bar-container {
+    flex: 1;
+    background-color: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 22px;
+}
+  
+.bar-fill {
+    height: 100%;
+    background-color: #6a5acd;
+    color: white;
+    font-size: 12px;
+    text-align: right;
+    padding-right: 5px;
+    border-radius: 8px;
+    transition: width 0.6s ease;
+}

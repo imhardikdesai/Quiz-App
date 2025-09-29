@@ -11,7 +11,12 @@ const QuizState = (props) => {
     const [url, setUrl] = useState('');
     const [loading, setLoading] = useState(false);
     const len = questions.length;
-    const [answerList, setAnswerList] = useState([])
+    const [answerList, setAnswerList] = useState([]);
+    const [usedLifelines, setUsedLifelines] = useState({
+        fiftyFifty: false,
+        audience: false,
+        revealAnswer: false
+    });
 
     const fetchQuestions = async (api) => {
         const response = await fetch(api);
@@ -28,7 +33,7 @@ const QuizState = (props) => {
 
 
     return (
-        <QuizContext.Provider value={{ answerList, setAnswerList, len, questions, setQuestions, url, setUrl, fetchQuestions, loading, setLoading, score, setScore, next, setNext }}>
+        <QuizContext.Provider value={{ answerList, setAnswerList, len, questions, setQuestions, url, setUrl, fetchQuestions, loading, setLoading, score, setScore, next, setNext, usedLifelines, setUsedLifelines }}>
             {props.children}
         </QuizContext.Provider>
     )
