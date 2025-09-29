@@ -61,7 +61,6 @@ export default function BetterNavbar() {
             </Text>
           </HStack>
 
-          {/* Active indicator */}
           {isActive && (
             <MotionBox
               position="absolute"
@@ -117,7 +116,6 @@ export default function BetterNavbar() {
             transition={{ duration: 0.3 }}
           />
 
-          {/* Left side - Logo */}
           <HStack spacing={4}>
             <ReachLink to="/">
               <MotionBox
@@ -142,7 +140,6 @@ export default function BetterNavbar() {
             </ReachLink>
           </HStack>
 
-          {/* Center - QUIZ APP Heading */}
           <MotionBox
             position="absolute"
             left="50%"
@@ -179,7 +176,6 @@ export default function BetterNavbar() {
             </MotionText>
           </MotionBox>
 
-          {/* Right side - Navigation */}
           <MotionFlex
             as="nav"
             spacing={2}
@@ -198,7 +194,6 @@ export default function BetterNavbar() {
           </MotionFlex>
         </Flex>
 
-        {/* Mobile Menu with AnimatePresence */}
         <AnimatePresence>
           {isOpen && (
             <MotionBox
@@ -214,7 +209,6 @@ export default function BetterNavbar() {
                 spacing={2}
                 pb={4}
               >
-                {/* Mobile QUIZ APP heading */}
                 <MotionBox
                   textAlign="center"
                   py={2}
