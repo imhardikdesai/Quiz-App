@@ -1,4 +1,259 @@
+/* Home Page Container */
 .App {
-  background-color: #212832;
-  color: white;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1f2e 0%, #2d3548 100%);
+}
+
+/* Hero Section */
+.home-hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  background: linear-gradient(135deg, rgba(53, 133, 193, 0.1) 0%, rgba(40, 174, 97, 0.1) 100%);
+  border-radius: 20px;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.home-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3585c1 0%, #28ae61 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.home-hero p {
+  font-size: 1.2rem;
+  color: #b0b8c8;
+  margin-bottom: 0;
+}
+
+/* Form Container */
+.form-container {
+  background: rgba(45, 53, 72, 0.6);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Inputs */
+.form-control,
+.form-select {
+  background-color: rgba(33, 40, 50, 0.8) !important;
+  border: 2px solid rgba(53, 133, 193, 0.3) !important;
+  color: white !important;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: rgba(33, 40, 50, 0.95) !important;
+  border-color: #3585c1 !important;
+  box-shadow: 0 0 0 0.2rem rgba(53, 133, 193, 0.25) !important;
+  transform: scale(1.02);
+}
+
+.form-control::placeholder {
+  color: #8891a5;
+}
+
+.form-label {
+  color: #e1e5ee;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  display: block;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #3585c1 0%, #2a6fa0 100%) !important;
+  border: none !important;
+  padding: 0.75rem 2rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(53, 133, 193, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2a6fa0 0%, #1f5680 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(53, 133, 193, 0.6);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Map Quiz Section */
+.map-quiz-section {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  background: rgba(40, 174, 97, 0.05);
+  border-radius: 16px;
+  border: 2px dashed rgba(40, 174, 97, 0.3);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.map-quiz-section:hover {
+  background: rgba(40, 174, 97, 0.1);
+  border-color: rgba(40, 174, 97, 0.5);
+  transform: scale(1.02);
+}
+
+.map-quiz-section h2 {
+  color: #28ae61;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.map-quiz-section .chakra-button {
+  background: linear-gradient(135deg, #28ae61 0%, #1f8d4d 100%) !important;
+  color: white !important;
+  padding: 0.75rem 2rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(40, 174, 97, 0.4);
+  border: none !important;
+}
+
+.map-quiz-section .chakra-button:hover {
+  background: linear-gradient(135deg, #1f8d4d 0%, #166837 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 174, 97, 0.6);
+}
+
+/* Dividers */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(53, 133, 193, 0.5), transparent);
+  margin: 2rem 0;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+/* Loading Spinner Container */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 40, 50, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(53, 133, 193, 0.5);
+  }
+
+  50% {
+    text-shadow: 0 0 30px rgba(53, 133, 193, 0.8);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-hero h1 {
+    font-size: 2rem;
+  }
+
+  .home-hero p {
+    font-size: 1rem;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .btn-primary,
+  .map-quiz-section .chakra-button {
+    padding: 0.6rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+
+  .home-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .form-container {
+    padding: 1.25rem;
+  }
 }
