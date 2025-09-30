@@ -84,7 +84,7 @@ const Home = () => {
         <>
             {loading && (
                 <motion.div
-                    className="loading-overlay"
+                    className="loading-overlay dark-loading"
                     variants={loadingVariants}
                     initial="hidden"
                     animate="visible"
@@ -96,7 +96,7 @@ const Home = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <HashLoader
-                            color={'#3585c1'}
+                            color={'#9F7AEA'}
                             loading={loading}
                             size={100}
                             aria-label="Loading Spinner"
@@ -108,32 +108,25 @@ const Home = () => {
 
             {(url === '' || questions.length === 0) ? (
                 <motion.div
-                    className="container my-3"
+                    className="container my-3 dark-container"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                 >
                     <motion.div
-                        className="home-hero"
+                        className="home-hero dark-hero"
                         variants={heroVariants}
                     >
                         <motion.h1
+                            className="dark-hero-title"
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            style={{
-                                fontSize: '2.5rem',
-                                fontWeight: 700,
-                                background: 'linear-gradient(135deg, #3585c1 0%, #28ae61 100%)',
-                                WebkitBackgroundClip: 'text',
-                                WebkitTextFillColor: 'transparent',
-                                backgroundClip: 'text',
-                                marginBottom: '1rem'
-                            }}
                         >
                             Start Your Quiz Adventure
                         </motion.h1>
                         <motion.p
+                            className="dark-hero-text"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.6, delay: 0.4 }}
@@ -143,7 +136,7 @@ const Home = () => {
                     </motion.div>
 
                     <motion.div
-                        className="form-container"
+                        className="form-container dark-form-container"
                         variants={itemVariants}
                         whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                     >
@@ -151,6 +144,7 @@ const Home = () => {
                     </motion.div>
 
                     <motion.hr
+                        className="dark-divider"
                         variants={itemVariants}
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
@@ -158,7 +152,7 @@ const Home = () => {
                     />
 
                     <motion.div
-                        className="map-quiz-section"
+                        className="map-quiz-section dark-map-section"
                         variants={itemVariants}
                         whileHover={{
                             scale: 1.03,
@@ -167,13 +161,14 @@ const Home = () => {
                         whileTap={{ scale: 0.98 }}
                     >
                         <motion.h2
+                            className="dark-section-title"
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.6 }}
                         >
                             🗺️ Ready for a Geography Challenge?
                         </motion.h2>
-                        <Text mb={'3'} fontSize='lg' color="whiteAlpha.800">
+                        <Text mb={'3'} fontSize='lg' color="#b8c1d3">
                             Test your knowledge of world geography with our interactive map quiz!
                         </Text>
                         <Link to="/map">
@@ -181,7 +176,15 @@ const Home = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <Button size="lg">Explore Map Quiz</Button>
+                                <Button 
+                                    size="lg"
+                                    bg="#9F7AEA"
+                                    color="white"
+                                    _hover={{ bg: '#805AD5' }}
+                                    _active={{ bg: '#6B46C1' }}
+                                >
+                                    Explore Map Quiz
+                                </Button>
                             </motion.div>
                         </Link>
                     </motion.div>

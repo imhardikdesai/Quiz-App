@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const Form = (props) => {
     const { handleSubmit, onChange } = props
-
+    
     const getOptionsValue = (data) => {
         return data.map((item) => {
             let objectKeys = Object.keys(item)[0]
@@ -54,19 +54,19 @@ const Form = (props) => {
 
     return (
         <motion.form
-            className='mt-2'
+            className='mt-2 dark-form'
             onSubmit={handleSubmit}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
         >
             <motion.div className="mb-3" variants={formFieldVariants}>
-                <label htmlFor="number" className="form-label">Number of Questions:</label>
+                <label htmlFor="number" className="form-label dark-label">Number of Questions:</label>
                 <motion.input
                     placeholder='Enter Number of Questions'
                     type="number"
                     name='number'
-                    className="form-control"
+                    className="form-control dark-input"
                     id="number"
                     onChange={onChange}
                     required
@@ -76,10 +76,10 @@ const Form = (props) => {
             </motion.div>
 
             <motion.div className="mb-3" variants={formFieldVariants}>
-                <label htmlFor="category" className="form-label">Select Category:</label>
+                <label htmlFor="category" className="form-label dark-label">Select Category:</label>
                 <motion.select
                     name='category'
-                    className="form-select"
+                    className="form-select dark-select"
                     aria-label="Default select example"
                     onChange={onChange}
                     whileFocus={{ scale: 1.02 }}
@@ -91,10 +91,10 @@ const Form = (props) => {
             </motion.div>
 
             <motion.div className="mb-3" variants={formFieldVariants}>
-                <label htmlFor="difficulty" className="form-label">Select Difficulty:</label>
+                <label htmlFor="difficulty" className="form-label dark-label">Select Difficulty:</label>
                 <motion.select
                     name='difficulty'
-                    className="form-select"
+                    className="form-select dark-select"
                     aria-label="Default select example"
                     onChange={onChange}
                     whileFocus={{ scale: 1.02 }}
@@ -106,10 +106,10 @@ const Form = (props) => {
             </motion.div>
 
             <motion.div className="mb-3" variants={formFieldVariants}>
-                <label htmlFor="type" className="form-label">Select Type:</label>
+                <label htmlFor="type" className="form-label dark-label">Select Type:</label>
                 <motion.select
                     name='type'
-                    className="form-select"
+                    className="form-select dark-select"
                     aria-label="Default select example"
                     onChange={onChange}
                     whileFocus={{ scale: 1.02 }}
@@ -122,7 +122,7 @@ const Form = (props) => {
 
             <motion.button
                 type="submit"
-                className="btn btn-primary"
+                className="btn btn-primary dark-button"
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"

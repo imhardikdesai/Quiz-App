@@ -1,4 +1,4 @@
-/* Reset default margin and font family for the entire document */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,48 +10,39 @@ body {
   color: white;
 }
 
-/* Define styles for code blocks */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-/* Highlight for incorrect elements or responses */
 .wrong {
   background-color: #ee545338 !important;
   border-color: #EE5453 !important;
 }
 
-/* Highlight for correct elements or responses */
 .right {
   background-color: #28ae6138 !important;
   border-color: #28AE61 !important;
 }
 
-/* Additional styles for icons associated with correct responses */
 .rightIcon {
   background-color: #28AE61 !important;
 }
 
-/* Additional styles for icons associated with incorrect responses */
 .wrongIcon {
   background-color: #EE5453 !important;
 }
 
-/* Highlight for selected options */
 .optionSelected {
   background-color: #3d1f463d !important;
 }
 
-/* Responsive design for smaller screens */
 @media (max-width: 768px) {
-  /* Add styles for small screens */
   body {
     font-size: 16px;
   }
 }
 
-/* Typography styles for headings and paragraphs */
 h1 {
   font-size: 24px;
   font-weight: bold;
@@ -64,7 +55,6 @@ p {
   line-height: 1.5;
 }
 
-/* Button styles with hover and active effects */
 .button {
   background-color: #007bff;
   color: white;
@@ -82,7 +72,6 @@ p {
   background-color: #003c80;
 }
 
-/* Link styles with smooth hover transitions */
 a {
   text-decoration: none;
   color: #007bff;
@@ -93,12 +82,10 @@ a:hover {
   color: #0056b3;
 }
 
-/* Box shadows for elements */
 .box {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Form styles for input fields and buttons */
 input[type="text"],
 input[type="email"] {
   border: 1px solid #ccc;
@@ -118,7 +105,6 @@ input[type="submit"]:hover {
   background-color: #1f8d4d;
 }
 
-/* Smooth fading transition */
 .transition-fade {
   transition: opacity 0.3s ease-in-out;
 }
@@ -127,7 +113,6 @@ input[type="submit"]:hover {
   opacity: 0.8;
 }
 
-/* Custom styles for specific elements */
 .custom-header {
   font-size: 32px;
   color: #333;
@@ -138,4 +123,186 @@ input[type="submit"]:hover {
   padding: 20px;
   text-align: center;
   color: #777;
+}
+
+.dark-loading,
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(33, 40, 50, 0.95);
+    z-index: 9999;
+}
+
+.dark-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.dark-hero,
+.home-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.dark-hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #9F7AEA 0%, #28ae61 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.dark-hero-text {
+    color: #8b95a8;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.dark-form-container,
+.form-container {
+    transition: transform 0.3s ease;
+}
+
+.dark-form,
+form.mt-2 {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #2a313c;
+    border-radius: 1rem;
+    border: 1px solid #3d4654;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-label,
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #9F7AEA;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.dark-input,
+.dark-select,
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #1a1f28 !important;
+    border: 1px solid #3d4654 !important;
+    border-radius: 0.5rem;
+    color: white !important;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.dark-input:focus,
+.dark-select:focus,
+.form-control:focus,
+.form-select:focus {
+    border-color: #9F7AEA !important;
+    box-shadow: 0 0 0 3px rgba(159, 122, 234, 0.1) !important;
+}
+
+.dark-select option,
+.form-select option {
+    background-color: #1a1f28;
+    color: white;
+}
+
+.dark-input::placeholder,
+.form-control::placeholder {
+    color: #5a6473;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+.dark-button,
+.btn-primary {
+    width: 100%;
+    padding: 0.875rem;
+    background-color: #28ae61 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dark-button:hover,
+.btn-primary:hover {
+    background-color: #1f8d4d !important;
+}
+
+.dark-divider,
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #3d4654, transparent);
+    margin: 3rem 0;
+}
+
+.dark-map-section,
+.map-quiz-section {
+    padding: 2rem;
+    background-color: #2a313c;
+    border-radius: 1rem;
+    border: 1px solid #3d4654;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.dark-section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+.my-3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .dark-hero-title {
+        font-size: 2rem;
+    }
+    
+    .dark-container {
+        padding: 1rem;
+    }
+    
+    .dark-form,
+    form.mt-2 {
+        padding: 1.5rem;
+    }
+    
+    .dark-map-section,
+    .map-quiz-section {
+        padding: 1.5rem;
+    }
+    
+    .dark-section-title {
+        font-size: 1.5rem;
+    }
 }
