@@ -3,15 +3,19 @@ import { useEffect, useState } from "react";
 
 const QuizState = (props) => {
     const [questions, setQuestions] = useState([]);
-    const [score, setScore] = useState({ 'rightAnswers': 0, 'wrongAnswers': 0 });
+    const [score, setScore] = useState({ rightAnswers: 0, wrongAnswers: 0 });
     const [next, setNext] = useState(0);
     const [url, setUrl] = useState('');
     const [loading, setLoading] = useState(false);
     const len = questions.length;
     const [answerList, setAnswerList] = useState([]);
+    const [usedLifelines, setUsedLifelines] = useState({
+        fiftyFifty: false,
+        audience: false,
+        revealAnswer: false
+    });
 
     const fetchQuestions = async (api) => {
-        // Don't fetch if URL is empty
         if (!api || api.trim() === '') {
             setLoading(false);
             return;
@@ -63,11 +67,13 @@ const QuizState = (props) => {
             score,
             setScore,
             next,
-            setNext
+            setNext,
+            usedLifelines,
+            setUsedLifelines
         }}>
             {props.children}
         </QuizContext.Provider>
-    )
+    );
 }
 
 export default QuizState;
