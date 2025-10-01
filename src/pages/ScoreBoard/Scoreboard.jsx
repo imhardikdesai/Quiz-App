@@ -9,7 +9,7 @@ import ScoreRemark from "../../components/ScoreRemark/ScoreRemark";
 
 const Scoreboard = (props) => {
     const context = useContext(quizContext);
-    const { setNext, setScore, setAnswerList, setUsedLifelines } = context;
+    const { setNext, setScore, setAnswerList } = context;
     const { total_que, correct_que, wrong_que } = props;
     let percentage = (correct_que / total_que) * 100;
     let Attempted = ((correct_que + wrong_que) / total_que) * 100;
@@ -22,11 +22,6 @@ const Scoreboard = (props) => {
         setNext(0);
         setScore({ rightAnswers: 0, wrongAnswers: 0 });
         setAnswerList([]);
-        setUsedLifelines({
-            fiftyFifty: false,
-            audience: false,
-            showAnswer: false
-        });
     };
 
     return (
