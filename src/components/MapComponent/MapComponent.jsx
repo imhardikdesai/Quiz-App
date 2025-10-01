@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { GoogleMap, Marker, InfoWindow, useJsApiLoader } from '@react-google-maps/api';
 import { Button } from '@chakra-ui/react';
 
+// Function to calculate distance
 const calculateDistance = (location1, location2) => {
   const R = 6371;
   const dLat = (location2.lat - location1.lat) * Math.PI / 180;
